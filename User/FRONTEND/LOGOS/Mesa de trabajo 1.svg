@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d73300;
+      }
+
+      .cls-2 {
+        font-family: Melodrama-Bold, Melodrama;
+        font-size: 71px;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #5c1200;
+      }
+
+      .cls-5 {
+        letter-spacing: .08em;
+      }
+
+      .cls-6 {
+        letter-spacing: .08em;
+      }
+
+      .cls-7 {
+        letter-spacing: .08em;
+      }
+
+      .cls-8 {
+        letter-spacing: .08em;
+      }
+
+      .cls-9 {
+        letter-spacing: .06em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-4 {
+        font-family: ClashDisplayVariable-Light, 'Clash Display Variable';
+        font-size: 31px;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .cls-11 {
+        fill: none;
+        stroke: #5c1200;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="600" height="600"/>
+  <g>
+    <text class="cls-2" transform="translate(124.65 473.54) scale(1.04 1)"><tspan class="cls-9" x="0" y="0">A</tspan><tspan class="cls-8" x="41.39" y="0">d</tspan><tspan class="cls-10" x="94.93" y="0">f</tspan><tspan class="cls-5" x="122.62" y="0">en</tspan><tspan class="cls-6" x="216.05" y="0">e</tspan><tspan class="cls-7" x="265.32" y="0">sa</tspan></text>
+    <text class="cls-4" transform="translate(198.37 518.66) scale(.92 1)"><tspan x="0" y="0">Tejidos e Hilados</tspan></text>
+  </g>
+  <g>
+    <path class="cls-3" d="M113.19,261.34c3.6-9.04,24.42.6,64.81-11.98,10.82-3.37,22.3-8.36,45.26-18.36,29.47-12.83,30.85-15.04,37.92-14.61,24.07,1.48,28.05,28.35,51.53,29.75,18.58,1.11,23.38-15.28,40.66-13.12,16.1,2.01,15.72,18.72,39.76,37.58,9.64,7.56,10.46,5.6,45.75,23.42,43.97,22.21,48.19,28.04,48.41,33.39.4,10.16-13.62,19.86-24.77,24.42-34.31,14.05-54.08-18.75-99.89-14.24-36.49,3.59-39.73,25.96-67.78,21.78-29.8-4.44-29.79-30.78-67.29-42.48-22.3-6.96-26.44,2.47-50.65-3.42-37.62-9.15-68.47-40.2-63.72-52.13Z"/>
+    <g>
+      <path class="cls-11" d="M276.32,138.87c-2.06.86-30.5,13.13-27.48,27.24,2.84,13.25,32.8,25.12,57.11,22.29,22.45-2.62,48.24-18.72,45.17-32.94-3.42-15.86-42.92-29.98-74.8-16.59Z"/>
+      <path class="cls-3" d="M271.64,138.79c-2.16-7.3-.84-10.54.54-12.14,3.79-4.42,10.69.32,24.1-2.19,10.05-1.88,13.73-5.96,18.15-3.62,3.91,2.07,5.16,7.46,5.6,11.72"/>
+    </g>
+    <path class="cls-3" d="M326.56,201.66c-.7,3.15-2.52,5.95-5.11,7.87-2.84,2.11-6.86,4.27-11.9,4.79-11.1,1.14-22.57-6.18-28.14-18.44-1.74-4-3.66-9.72-4.25-16.76-.73-8.68.83-16.1,2.67-21.55,1.49-4.42,5.13-7.78,9.66-8.88,2.85-.69,6.08-1.23,9.65-1.47,5.98-.39,11.27.23,15.59,1.15,4.79,1.02,8.63,4.58,10.08,9.26,1.8,5.85,3.39,13.23,3.75,21.81.36,8.78-.68,16.34-1.99,22.2Z"/>
+  </g>
+</svg>

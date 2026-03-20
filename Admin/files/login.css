@@ -1,0 +1,239 @@
+/* ═══════════════════════════════════════════════════════
+   ADFENESA — Login
+   Colores: #ffffff  #D73300  #5C1200
+═══════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Melodrama';
+  src: url('/TIPOGRAFIAS/Melodrama-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('/TIPOGRAFIAS/Melodrama-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('/TIPOGRAFIAS/Melodrama-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('/TIPOGRAFIAS/Melodrama-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Melodrama', Georgia, serif;
+  background-color: #5C1200;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Spinner ── */
+.btn-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Layout ── */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  animation: fade-up 0.6s ease forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Brand ── */
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-logo { height: 80px; width: auto; }
+
+.login-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #D73300;
+  border: 1px solid#D73300;
+  border-radius: 2px;
+  padding: 3px 10px;
+}
+
+/* ── Card ── */
+.login-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 500;
+  color: #D73300;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #5C1200;
+  margin-top: -12px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* ── Error ── */
+.login-error {
+  background: rgba(92, 18, 0, 0.08);
+  border: 1px solid #5C1200;
+  border-radius: 4px;
+  padding: 11px 14px;
+  font-size: 13px;
+  color: #5C1200;
+}
+
+/* ── Labels y formulario ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #5C1200;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.form-input {
+  background: #ffffff;
+  border: 1px solid #D73300;
+  border-radius: 4px;
+  color: #5C1200;
+  font-family: 'Melodrama', Georgia, serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-input::placeholder { color: #5C1200; opacity: 0.35; }
+
+.form-input:focus {
+  border-color: #D73300;
+  box-shadow: 0 0 0 3px rgba(215, 51, 0, 0.12);
+}
+
+/* ── Password wrapper ── */
+.input-password-wrapper { position: relative; }
+.input-password-wrapper .form-input { padding-right: 44px; }
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5C1200;
+  opacity: 0.5;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.25s ease;
+}
+
+.toggle-password:hover { opacity: 1; }
+
+/* ── Botón login ── */
+.btn-login {
+  width: 100%;
+  background: #5C1200;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Melodrama', Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  padding: 15px;
+  margin-top: 6px;
+  transition: background 0.25s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-login:hover {
+  background: #D73300;
+  transform: translateY(-1px);
+}
+
+.btn-login:active { transform: translateY(0); }
+.btn-login:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+/* ── Volver ── */
+.login-back {
+  text-align: center;
+  font-size: 13px;
+  color: #D73300;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+  letter-spacing: 0.03em;
+}
+
+.login-back:hover { opacity: 1; }

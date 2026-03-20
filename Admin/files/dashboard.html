@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADFENESA — Panel de Administración</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dashboard-body">
+
+  <!-- ═══════════════════ NAVBAR ADMIN ═══════════════════ -->
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <img src="/User/FRONTEND/LOGOS/LOGO-HEADER.svg" alt="Logo ADFENESA" class="admin-logo" />
+      <span class="admin-badge">ADMIN</span>
+    </div>
+    <nav class="admin-nav">
+      <a href="/User/FRONTEND/catalogo.html" class="admin-nav-link" target="_blank">
+        Ver sitio
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <div class="admin-divider"></div>
+      <button class="admin-logout" id="btn-logout">CERRAR SESIÓN</button>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════ CONTENIDO PRINCIPAL ═══════════════════ -->
+  <main class="dashboard-main">
+
+    <!-- Stats rápidas -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <span class="stat-number" id="stat-total">—</span>
+        <span class="stat-label">Productos totales</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-disponibles">—</span>
+        <span class="stat-label">Disponibles</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-categorias">—</span>
+        <span class="stat-label">Categorías</span>
+      </div>
+    </section>
+
+    <!-- Tabla de productos -->
+    <section class="productos-section">
+      <div class="productos-header">
+        <h1 class="productos-title">Productos del catálogo</h1>
+        <button class="btn-nuevo" id="btn-nuevo-producto">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          NUEVO PRODUCTO
+        </button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filtros-bar">
+        <input type="text" id="filtro-buscar" class="filtro-input" placeholder="Buscar producto..." />
+        <select id="filtro-categoria" class="filtro-select">
+          <option value="">Todas las categorías</option>
+          <option value="gorros">Ruanas</option>
+          <option value="bufandas">Bufandas</option>
+          <option value="sueteres">Suéteres</option>
+          <option value="guantes">Bolsos</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+
+      <!-- Tabla -->
+      <div class="tabla-wrapper">
+        <table class="productos-tabla">
+          <thead>
+            <tr>
+              <th>IMAGEN</th>
+              <th>NOMBRE</th>
+              <th>CATEGORÍA</th>
+              <th>PRECIO</th>
+              <th>ESTADO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-body">
+            <!-- filas insertadas por JS -->
+          </tbody>
+        </table>
+
+        <!-- Estado vacío -->
+        <div class="tabla-vacia hidden" id="tabla-vacia">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p>No hay productos en el catálogo</p>
+          <span>Haz clic en «Nuevo producto» para agregar el primero</span>
+        </div>
+
+        <!-- Cargando -->
+        <div class="tabla-loading" id="tabla-loading">
+          <div class="spinner"></div>
+          <p>Cargando productos...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ MODAL PRODUCTO ═══════════════════ -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal" id="modal-producto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <h2 class="modal-titulo" id="modal-titulo">Nuevo producto</h2>
+
+      <!-- Upload imagen -->
+      <div class="upload-area" id="upload-area">
+        <input type="file" id="input-imagen" accept="image/jpeg,image/png,image/webp" class="input-file-hidden" />
+        <div class="upload-preview hidden" id="upload-preview">
+          <img id="preview-img" src="" alt="Vista previa" />
+          <button class="upload-change" id="upload-change">Cambiar imagen</button>
+        </div>
+        <div class="upload-placeholder" id="upload-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <p class="upload-texto">HAZ CLIC PARA SUBIR UNA IMAGEN</p>
+          <span class="upload-hint">JPG, PNG, WEBP — Máx. 5 MB (alta calidad recomendada)</span>
+        </div>
+        <div class="upload-progress hidden" id="upload-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="progress-label" id="progress-label">Subiendo... 0%</span>
+        </div>
+      </div>
+      <p class="campo-error hidden" id="error-imagen">Selecciona una imagen para el producto.</p>
+
+      <!-- Campos del formulario -->
+      <div class="form-grid">
+
+        <div class="form-group full-width">
+          <label class="form-label" for="campo-nombre">NOMBRE DEL PRODUCTO <span class="required">*</span></label>
+          <input class="form-input" type="text" id="campo-nombre" placeholder="Ej: Gorro tejido artesanal" maxlength="100" />
+          <p class="campo-error hidden" id="error-nombre">El nombre es obligatorio.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="campo-precio">PRECIO (COP) <span class="required">*</span></label>
+          <input class="form-input" type="number" id="campo-precio" placeholder="85000" min="0" step="500" />
+          <p class="campo-error hidden" id="error-precio">Ingresa un precio válido.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="campo-categoria">CATEGORÍA <span class="required">*</span></label>
+          <select class="form-input form-select" id="campo-categoria">
+            <option value="" disabled selected>Seleccionar...</option>
+            <option value="gorros">Gorros</option>
+            <option value="bufandas">Bufandas</option>
+            <option value="sueteres">Suéteres</option>
+            <option value="guantes">Guantes</option>
+            <option value="otros">Otros</option>
+          </select>
+          <p class="campo-error hidden" id="error-categoria">Selecciona una categoría.</p>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label" for="campo-descripcion">DESCRIPCIÓN</label>
+          <textarea class="form-input form-textarea" id="campo-descripcion" placeholder="Materiales, dimensiones, proceso de elaboración, cuidados especiales..." rows="4" maxlength="600"></textarea>
+          <span class="char-count" id="char-count">0 / 600</span>
+        </div>
+
+        <div class="form-group form-toggle-group">
+          <label class="form-label">DISPONIBLE EN CATÁLOGO</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="campo-disponible" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="form-group form-toggle-group">
+          <label class="form-label">DESTACAR EN INICIO</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="campo-destacado" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancelar" id="btn-cancelar">CANCELAR</button>
+        <button class="btn-guardar" id="btn-guardar">
+          <span id="btn-guardar-text">GUARDAR PRODUCTO</span>
+          <span class="btn-loader hidden" id="btn-guardar-loader"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════ MODAL CONFIRMAR ELIMINAR ═══════════════════ -->
+  <div class="modal-overlay hidden" id="modal-eliminar-overlay">
+    <div class="modal modal-confirmar" id="modal-eliminar">
+      <div class="confirmar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+      </div>
+      <h3 class="confirmar-titulo">¿Eliminar producto?</h3>
+      <p class="confirmar-texto">Esta acción no se puede deshacer. El producto y su imagen serán eliminados permanentemente del catálogo.</p>
+      <div class="confirmar-nombre" id="confirmar-nombre-producto"></div>
+      <div class="modal-actions">
+        <button class="btn-cancelar" id="btn-cancelar-eliminar">CANCELAR</button>
+        <button class="btn-eliminar" id="btn-confirmar-eliminar">
+          <span id="btn-eliminar-text">ELIMINAR</span>
+          <span class="btn-loader hidden" id="btn-eliminar-loader"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ TOAST NOTIFICACIONES ═══════════════════ -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Firebase SDK -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="auth-guard.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
