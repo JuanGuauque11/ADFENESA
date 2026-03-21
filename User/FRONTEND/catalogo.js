@@ -19,8 +19,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db  = getFirestore(app);
 
-// ── Número WhatsApp del negocio (sin + ni espacios) ──
-const WHATSAPP = "573000000000"; // ← reemplaza con el número real
+// ── Número WhatsApp ADFENESA ──
+const WHATSAPP = "573124595145"; 
 
 // ── Estado ──
 let todosLosProductos = [];
