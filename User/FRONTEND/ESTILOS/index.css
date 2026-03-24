@@ -163,6 +163,10 @@ body {
   opacity: 0;
 }
 
+.historia {
+  height: 100vh;
+}
+
 .historia-hero {
   min-height: 100vh;
   overflow: hidden;
@@ -214,4 +218,11 @@ body {
   height: 250px;
   width: 250px;
   border-radius: 10px;
+}
+
+.cabeza-oveja {
+  position: absolute;
+  right: 0;
+  object-fit: cover;
+  height: 500px;
 }
