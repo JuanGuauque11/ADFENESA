@@ -1,34 +1,61 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADFENESA</title>
-    <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
-    <link rel="stylesheet" href="ESTILOS/index.css" />
-  </head>
-  <body>
-    <header class="header">
-      <img
-        src="LOGOS/LOGO-HEADER.svg"
-        alt="logo de marca"
-        class="log-adfenesa"
-      />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="catalogo.html">Catalogo</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="procesos.html">Procesos</a></li>
-          <li><a href="contacto.html"> Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="presentacion">
-        <h1 class="title">Adfenesa</h1>
-        <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADFENESA</title>
+  <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
+  <link rel="stylesheet" href="ESTILOS/index.css" />
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+</head>
+
+<body>
+  <header class="header">
+    <img src="LOGOS/LOGO-HEADER.svg" alt="logo de marca" class="log-adfenesa" />
+    <nav>
+      <ul class="nav-links">
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="procesos.html">Procesos</a></li>
+        <li><a href="contacto.html"> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="presentacion">
+      <h1 class="title">Adfenesa</h1>
+      <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo">
+      <p class="aux">100% Artesanal</p>
+      <p class="aux-2">Descubre
+        <i class="fi fi-br-angle-down"></i>
+      </p>
+    </div>
+  </section>
+
+  <section class="historia-hero">
+    <div class="historia">
+      <p class="title-historia">Historia</p>
+      <div class="imgs-historia">
+        <img src="IMAGENES/segundo-telar.webp" alt="segundo-telar" class="segundo">
+        <img src="IMAGENES/hilandera.webp" alt="hilandera" class="hilandera">
+        <img src="IMAGENES/modelo-2.png" alt="modelo-2" class="mod-2">
+        <img src="IMAGENES/oveja-lejos.jpg" alt="oveja-lejos" class="oveja-lejos">
       </div>
-    </section>
-  </body>
+
+      <a href="historia.html">Conoce la historia</a>
+      <p class="descripcion-historia">
+        Un legado que a permanecido por <br>
+        4 generaciones
+      </p>
+
+      <img src="IMAGENES/cabeza de oveja.png" alt="cabeza-oveja" class="5">
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="index.js"></script>
+</body>
 </html>
