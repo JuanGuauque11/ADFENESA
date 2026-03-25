@@ -163,66 +163,112 @@ body {
   opacity: 0;
 }
 
-.historia {
-  height: 100vh;
-}
-
 .historia-hero {
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
+}
+
+.historia {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-historia {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: #d73300;
+  font-size: 100px;
+  font-weight: 500;
 }
 
 .imgs-historia {
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.segundo {
-  object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  width: 250px;
-  border-radius: 10px;
+  top: 0;
 }
 
 .hilandera {
   object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
+  height: 300px;
   width: 250px;
   border-radius: 10px;
+  transform: rotate(-15deg) translateX(50px);
+  position: relative;
+  z-index: 1;
+  box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.mod-2 {
+.segundo {
   object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
+  height: 300px;
   width: 250px;
   border-radius: 10px;
+  transform: rotate(-5deg) translateX(20px) translateY(50px);
+  position: relative;
+  z-index: 2;
+  box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.oveja-lejos {
+.hijo {
   object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
+  height: 300px;
   width: 250px;
   border-radius: 10px;
+  transform: rotate(5deg) translateX(-20px);
+  position: relative;
+  z-index: 3;
+  box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.padre-hijo {
+  object-fit: cover;
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  transform: rotate(15deg) translateX(-40px) translateY(20px);
+  position: relative;
+  z-index: 4;
+  box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .cabeza-oveja {
   position: absolute;
   right: 0;
   object-fit: cover;
-  height: 500px;
+  height: 400px;
+  bottom: 0;
+}
+
+.btn-historia{
+  color: #5c1200;
+  text-decoration: none;
+  background-color: #d73300;
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 30px;
+  border-radius: 15px;
+}
+
+.btn-historia:hover{
+  transition: color 1s ease;
+  color: #ffffff;
+}
+
+.descripcion-historia{
+  position: absolute;
+  left: 50px;
+  bottom: 25px;
+  font-size: 50px;
+  color: #5c1200;
+}
+
+.palabra {
+  transition: color 0.3s ease;
 }
