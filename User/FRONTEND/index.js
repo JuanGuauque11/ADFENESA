@@ -72,8 +72,8 @@ tl.to('.hilandera',     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
 //  La imagen sigue el cursor en toda la ventana
 // ══════════════════════════════════════
 document.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth  - 0.5) * 25;
-  const y = (e.clientY / window.innerHeight - 0.5) * 25;
+  const x = (e.clientX / window.innerWidth  - 0.5) * 10;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
 
   gsap.to('.modelo', {
     x: x,
@@ -122,7 +122,7 @@ gsap.to('.palabra', {
 // ══════════════════════════════════════
 gsap.fromTo('.cabeza-oveja',
   { opacity: 0, x: 60 },
-  { opacity: 1, x: 0, duration: 2, ease: 'power3.out',
+  { opacity: 1, x: 0, duration: 10, ease: 'power3.out',
     scrollTrigger: {
       trigger: '.cabeza-oveja',
       start: 'top 90%',
