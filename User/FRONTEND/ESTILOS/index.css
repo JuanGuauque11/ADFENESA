@@ -247,7 +247,7 @@ body {
   filter: blur(5px);
 }
 
-.btn-historia{
+.btn-historia {
   color: #5c1200;
   text-decoration: none;
   background-color: #d73300;
@@ -257,12 +257,12 @@ body {
   border-radius: 15px;
 }
 
-.btn-historia:hover{
+.btn-historia:hover {
   transition: color 1s ease;
   color: #ffffff;
 }
 
-.descripcion-historia{
+.descripcion-historia {
   position: absolute;
   left: 50px;
   bottom: 25px;
@@ -272,4 +272,9 @@ body {
 
 .palabra {
   transition: color 0.3s ease;
+}
+
+.catalogo-hero {
+  min-height: 100vh;
+  overflow: visible;
 }
