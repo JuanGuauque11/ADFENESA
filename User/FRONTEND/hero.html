@@ -1,68 +1,126 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADFENESA</title>
+    <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
+    <link rel="stylesheet" href="ESTILOS/hero.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADFENESA</title>
-  <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
-  <link rel="stylesheet" href="ESTILOS/hero.css" />
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-</head>
+  <body>
+    <header class="header">
+      <img
+        src="LOGOS/LOGO-HEADER.svg"
+        alt="logo de marca"
+        class="log-adfenesa"
+      />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="procesos.html">Procesos</a></li>
+          <li><a href="contacto.html"> Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header class="header">
-    <img src="LOGOS/LOGO-HEADER.svg" alt="logo de marca" class="log-adfenesa" />
-    <nav>
-      <ul class="nav-links">
-        <li><a href="catalogo.html">Catalogo</a></li>
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="procesos.html">Procesos</a></li>
-        <li><a href="contacto.html"> Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="presentacion">
-      <h1 class="title">Adfenesa</h1>
-      <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo">
-      <p class="aux">100% Artesanal</p>
-      <p class="aux-2">Descubre
-        <i class="fi fi-br-angle-down"></i>
-      </p>
-    </div>
-  </section>
-
-  <section class="historia-hero">
-    <div class="historia">
-      <p class="title-historia">Historia</p>
-      
-      <div class="imgs-historia">
-        <img src="IMAGENES/señora-hilando.png" alt="hilandera" class="hilandera">
-        <img src="IMAGENES/segundo-telar.webp" alt="segundo" class="segundo">
-        <img src="IMAGENES/Hijo.png" alt="modelo-2" class="hijo">
-        <img src="IMAGENES/Padre-Hijo.png" alt="oveja-lejos" class="padre-hijo">
+    <section class="hero">
+      <div class="presentacion">
+        <h1 class="title">Adfenesa</h1>
+        <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo" />
+        <p class="aux">100% Artesanal</p>
+        <p class="aux-2">
+          Descubre
+          <i class="fi fi-br-angle-down"></i>
+        </p>
       </div>
+    </section>
 
-      <a href="historia.html" class="btn-historia">Conoce la historia</a>
-      <p class="descripcion-historia">
-        Un legado que a permanecido por <br>
-        4 generaciones
-      </p>
+    <section class="historia-hero">
+      <div class="historia">
+        <p class="title-historia">Historia</p>
 
-      <img src="IMAGENES/cabeza de oveja.png" alt="cabeza-oveja" class="cabeza-oveja">
-    </div>
-  </section>
+        <div class="imgs-historia">
+          <img
+            src="IMAGENES/señora-hilando.png"
+            alt="hilandera"
+            class="hilandera"
+          />
+          <img
+            src="IMAGENES/segundo-telar.webp"
+            alt="segundo"
+            class="segundo"
+          />
+          <img src="IMAGENES/Hijo.png" alt="modelo-2" class="hijo" />
+          <img
+            src="IMAGENES/Padre-Hijo.png"
+            alt="oveja-lejos"
+            class="padre-hijo"
+          />
+        </div>
 
-  <section class="catalogo-hero">
-    
-  </section>
+        <a href="historia.html" class="btn-historia">Conoce la historia</a>
+        <p class="descripcion-historia">
+          Un legado que a permanecido por <br />
+          4 generaciones
+        </p>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="index.js"></script>
-</body>
+        <img
+          src="IMAGENES/cabeza de oveja.png"
+          alt="cabeza-oveja"
+          class="cabeza-oveja"
+        />
+      </div>
+    </section>
+
+    <section class="catalogo-hero">
+      <div class="cat-hero">
+        <p class="title-cat">Catalogo</p>
+        <a href="catalogo.html" class="btn-ver-mas">Ver mas</a>
+
+        <div class="cards-catalogo">
+          <div class="card-cat">
+            <img src="IMAGENES/sacos.jpeg" alt="Sacos" class="card-cat-img" />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Sacos</span>
+              <span class="card-cat-numero">01</span>
+            </div>
+          </div>
+
+          <div class="card-cat destacada">
+            <img
+              src="IMAGENES/modelo-3.png"
+              alt="Ruanas"
+              class="card-cat-img"
+            />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Ruanas</span>
+              <span class="card-cat-numero">02</span>
+            </div>
+          </div>
+
+          <div class="card-cat">
+            <img src="IMAGENES/bolsos.jpeg" alt="Bolsos" class="card-cat-img" />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Bolsos</span>
+              <span class="card-cat-numero">03</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="made">Hecho en nobsa</p>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

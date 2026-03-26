@@ -278,3 +278,118 @@ body {
   min-height: 100vh;
   overflow: visible;
 }
+
+.cat-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 50px;
+}
+
+.title-cat {
+  top: 10px;
+  font-size: 80px;
+  font-weight: 500;
+  color: #D73300;
+}
+
+.btn-ver-mas {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  background: #5C1200;
+  color: #D73300;
+  font-family: 'Melodrama', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 10px 50px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background: #ffffff;
+}
+
+/* ── Cards ── */
+
+.cards-catalogo {
+  display: flex;
+  flex-direction: row;        /* ← esto es lo clave */
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card-cat {
+  width: 260px;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid #5C1200;
+  position: relative;         /* necesario para el texto absoluto */
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.card-cat.destacada {
+  width: 300px;
+  height: 420px;
+  border-color: #D73300;
+  border-width: 4px;
+}
+
+.card-cat:hover {
+  transform: translateY(-8px);
+}
+
+.card-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Texto superpuesto en la parte inferior */
+.card-cat-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #5C1200;        /* fondo café para cards normales */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  min-height: 44px;
+}
+
+.card-cat.destacada .card-cat-info {
+  background: #D73300;        /* fondo naranja/rojo para la destacada */
+}
+
+.card-cat-nombre {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: 'Melodrama', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.card-cat-numero {
+  font-size: 14px;
+  font-weight: 300;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.made {
+  position: absolute;
+  font-size: 80px;
+  font-weight: 300;
+  color: #5C1200;
+  bottom: 10px;
+  letter-spacing: -0.02em;
+}
