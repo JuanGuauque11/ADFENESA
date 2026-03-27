@@ -296,8 +296,8 @@ body {
   position: absolute;
   top: 100px;
   right: 50px;
-  background: #5C1200;
-  color: #D73300;
+  background: #D73300;
+  color: #5C1200;
   font-family: 'Melodrama', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -309,7 +309,9 @@ body {
 }
 
 .btn-ver-mas:hover {
-  background: #ffffff;
+    background: #5C1200;
+  color: #D73300;
+
 }
 
 /* ── Cards ── */
@@ -382,14 +384,13 @@ body {
   font-size: 14px;
   font-weight: 300;
   color: #ffffff;
-  opacity: 0.7;
 }
 
 .made {
   position: absolute;
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 300;
   color: #5C1200;
-  bottom: 10px;
+  bottom: 20px;
   letter-spacing: -0.02em;
 }

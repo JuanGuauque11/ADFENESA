@@ -130,3 +130,46 @@ gsap.fromTo('.cabeza-oveja',
     }
   }
 );
+
+gsap.set('.card-cat', { opacity: 0, y: 60 });
+
+ScrollTrigger.create({
+  trigger: '.cards-catalogo',
+  start: 'top 80%',
+  onEnter: () => {
+    gsap.to('.card-cat', {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.2
+    });
+  }
+});
+
+// ══════════════════════════════════════
+//  CATÁLOGO — Animación "Hecho en nobsa"
+//  Palabras desde abajo con blur — Splitting.js + GSAP
+// ══════════════════════════════════════
+const made = document.querySelector('.made');
+made.innerHTML = 'Hecho en nobsa'.split(' ').map(w =>
+  `<span class="word-wrap" style="display:inline-block;overflow:hidden;vertical-align:bottom;margin-right:14px">
+    <span class="wd-made" style="display:inline-block">${w}</span>
+  </span>`
+).join('');
+
+gsap.set('.wd-made', { y: 60, opacity: 0, filter: 'blur(8px)' });
+
+gsap.to('.wd-made', {
+  y: 0,
+  opacity: 1,
+  filter: 'blur(0px)',
+  duration: 0.9,
+  ease: 'power3.out',
+  stagger: 0.18,
+  scrollTrigger: {
+    trigger: '.made',
+    start: 'top 95%',
+    toggleActions: 'play none none reverse'
+  }
+});
