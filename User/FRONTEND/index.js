@@ -42,6 +42,21 @@ gsap.fromTo('.aux-2',
   { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
 );
 
+
+// ══════════════════════════════════════
+//  HISTORIA — Animación título "Historia"
+//  Cortina hacia arriba — se repite al entrar
+// ══════════════════════════════════════
+gsap.set('.title-historia', { y: '100%' });
+
+ScrollTrigger.create({
+  trigger: '.title-historia',
+  start: 'top 90%',
+  toggleActions: 'play none none reset',
+  onEnter: () => gsap.to('.title-historia', { y: '0%', duration: 1, ease: 'power3.out' }),
+  onLeaveBack: () => gsap.set('.title-historia', { y: '100%' })
+});
+
 // ══════════════════════════════════════
 //  HISTORIA — Imágenes controladas por scroll
 //  Cada scroll revela una imagen nueva
@@ -145,6 +160,20 @@ ScrollTrigger.create({
       stagger: 0.2
     });
   }
+});
+
+// ══════════════════════════════════════
+//  CATÁLOGO — Animación título "Catalogo"
+//  Cortina hacia arriba — se repite al entrar
+// ══════════════════════════════════════
+gsap.set('.title-cat', { y: '100%' });
+
+ScrollTrigger.create({
+  trigger: '.title-cat',
+  start: 'top 90%',
+  toggleActions: 'play none none reset',
+  onEnter: () => gsap.to('.title-cat', { y: '0%', duration: 1, ease: 'power3.out' }),
+  onLeaveBack: () => gsap.set('.title-cat', { y: '100%' })
 });
 
 // ══════════════════════════════════════
