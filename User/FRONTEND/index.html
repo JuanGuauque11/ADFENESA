@@ -1,207 +1,274 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADFENESA</title>
+    <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
+    <link rel="stylesheet" href="ESTILOS/hero.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADFENESA</title>
-  <link rel="icon" href="/User/FRONTEND/LOGOS/Mesa de trabajo 5.svg" />
-  <link rel="stylesheet" href="ESTILOS/hero.css" />
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
-</head>
+  <body>
+    <header class="header">
+      <img
+        src="LOGOS/LOGO-HEADER.svg"
+        alt="logo de marca"
+        class="log-adfenesa"
+      />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="procesos.html">Procesos</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa solo visible en móvil -->
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
 
-<body>
-  <header class="header">
-    <img src="LOGOS/LOGO-HEADER.svg" alt="logo de marca" class="log-adfenesa" />
-    <nav>
-      <ul class="nav-links">
-        <li><a href="catalogo.html">Catalogo</a></li>
-        <li><a href="historia.html">Historia</a></li>
-        <li><a href="procesos.html">Procesos</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Menú lateral drawer -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawer-close">✕</button>
+  <img src="LOGOS/LOGO-HEADER.svg" alt="Logo" class="drawer-logo" />
+  <nav class="drawer-nav">
+    <a href="catalogo.html" class="drawer-link">Catalogo</a>
+    <a href="historia.html" class="drawer-link">Historia</a>
+    <a href="procesos.html" class="drawer-link">Procesos</a>
+  </nav>
+</div>
 
-  <section class="hero">
-    <div class="presentacion">
-      <h1 class="title">Adfenesa</h1>
-      <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo" />
-      <p class="aux">100% Artesanal</p>
-      <p class="aux-2">
-        Descubre
-        <i class="fi fi-br-angle-down"></i>
-      </p>
-    </div>
-  </section>
-
-  <section class="historia-hero">
-    <div class="historia">
-      <p class="title-historia">Historia</p>
-
-      <div class="imgs-historia">
-        <img src="IMAGENES/transito.jpg" alt="hilandera" class="hilandera" />
-        <img src="IMAGENES/Segundo-Telar.png" alt="segundo" class="segundo" />
-        <img src="IMAGENES/Felipe-Telar.png" alt="modelo-2" class="hijo" />
-        <img src="IMAGENES/Segundo-Nieto.png" alt="oveja-lejos" class="padre-hijo" />
+    <section class="hero">
+      <div class="presentacion">
+        <h1 class="title">Adfenesa</h1>
+        <img src="IMAGENES/modelo.png" alt="img-modelo" class="modelo" />
+        <p class="aux">100% Artesanal</p>
+        <p class="aux-2">
+          Descubre
+          <i class="fi fi-br-angle-down"></i>
+        </p>
       </div>
+    </section>
 
-      <a href="historia.html" class="btn-historia">Conoce la historia</a>
-      <p class="descripcion-historia">
-        Un legado que a permanecido por <br />
-        4 generaciones
-      </p>
+    <section class="historia-hero">
+      <div class="historia">
+        <p class="title-historia">Historia</p>
 
-      <img src="IMAGENES/cabeza de oveja.png" alt="cabeza-oveja" class="cabeza-oveja" />
-    </div>
-  </section>
+        <div class="imgs-historia">
+          <img src="IMAGENES/transito.jpg" alt="hilandera" class="hilandera" />
+          <img src="IMAGENES/Segundo-Telar.png" alt="segundo" class="segundo" />
+          <img src="IMAGENES/Felipe-Telar.png" alt="modelo-2" class="hijo" />
+          <img
+            src="IMAGENES/Segundo-Nieto.png"
+            alt="oveja-lejos"
+            class="padre-hijo"
+          />
+        </div>
 
-  <section class="catalogo-hero">
-    <div class="cat-hero">
-      <p class="title-cat">Catalogo</p>
-      <a href="catalogo.html" class="btn-ver-mas">Ver mas</a>
+        <a href="historia.html" class="btn-historia">Conoce la historia</a>
+        <p class="descripcion-historia">
+          Un legado que a permanecido por <br />
+          4 generaciones
+        </p>
 
-      <div class="cards-catalogo">
-        <div class="card-cat">
-          <img src="IMAGENES/sacos.jpeg" alt="Sacos" class="card-cat-img" />
-          <div class="card-cat-info">
-            <span class="card-cat-nombre">Sacos</span>
-            <span class="card-cat-numero">01</span>
+        <img
+          src="IMAGENES/cabeza de oveja.png"
+          alt="cabeza-oveja"
+          class="cabeza-oveja"
+        />
+      </div>
+    </section>
+
+    <section class="catalogo-hero">
+      <div class="cat-hero">
+        <p class="title-cat">Catalogo</p>
+        <a href="catalogo.html" class="btn-ver-mas">Ver mas</a>
+
+        <div class="cards-catalogo">
+          <div class="card-cat">
+            <img src="IMAGENES/sacos.jpeg" alt="Sacos" class="card-cat-img" />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Sacos</span>
+              <span class="card-cat-numero">01</span>
+            </div>
+          </div>
+
+          <div class="card-cat destacada">
+            <img
+              src="IMAGENES/modelo-3.png"
+              alt="Ruanas"
+              class="card-cat-img"
+            />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Ruanas</span>
+              <span class="card-cat-numero">02</span>
+            </div>
+          </div>
+
+          <div class="card-cat">
+            <img src="IMAGENES/bolsos.jpeg" alt="Bolsos" class="card-cat-img" />
+            <div class="card-cat-info">
+              <span class="card-cat-nombre">Bolsos</span>
+              <span class="card-cat-numero">03</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-cat destacada">
-          <img src="IMAGENES/modelo-3.png" alt="Ruanas" class="card-cat-img" />
-          <div class="card-cat-info">
-            <span class="card-cat-nombre">Ruanas</span>
-            <span class="card-cat-numero">02</span>
+        <p class="made">Hecho en nobsa</p>
+      </div>
+    </section>
+
+    <section class="procesos-hero">
+      <div class="pro-hero">
+        <p class="title-pro">Procesos</p>
+        <a href="procesos.html" class="btn-ver-mas-pro">Ver mas</a>
+
+        <div class="cards-pro">
+          <div class="card-pro">
+            <img src="IMAGENES/sacos.jpeg" alt="Sacos" class="card-pro-img" />
+            <div class="card-pro-info">
+              <span class="card-pro-nombre">Telar Horizontal</span>
+              <span class="card-pro-numero">01</span>
+            </div>
+          </div>
+
+          <div class="card-pro destacada">
+            <img
+              src="IMAGENES/modelo-3.png"
+              alt="Ruanas"
+              class="card-pro-img"
+            />
+            <div class="card-pro-info">
+              <span class="card-pro-nombre">Telar Vertical</span>
+              <span class="card-pro-numero">02</span>
+            </div>
+          </div>
+
+          <div class="card-pro">
+            <img src="IMAGENES/bolsos.jpeg" alt="Bolsos" class="card-pro-img" />
+            <div class="card-pro-info">
+              <span class="card-pro-nombre">Dos Agujas</span>
+              <span class="card-pro-numero">03</span>
+            </div>
           </div>
         </div>
 
-        <div class="card-cat">
-          <img src="IMAGENES/bolsos.jpeg" alt="Bolsos" class="card-cat-img" />
-          <div class="card-cat-info">
-            <span class="card-cat-nombre">Bolsos</span>
-            <span class="card-cat-numero">03</span>
+        <p class="pro-made">
+          Todos nuestros procesos <br />
+          son 100% artesanales y a mano.
+        </p>
+      </div>
+    </section>
+
+    <section class="medida-hero">
+      <div class="medida-contenido">
+        <p class="title-medida">A la medida</p>
+        <p class="desc-medida">
+          Si estas interesado en un producto
+          <span class="destacado-medida">A LA MEDIDA</span>, deja tus datos y te
+          contactaremos
+        </p>
+
+        <div class="medida-form-wrapper">
+          <h2 class="medida-titulo-form">CONTACTANOS</h2>
+
+          <div class="medida-form">
+            <div class="campo-medida">
+              <label class="label-medida">Nombre</label>
+              <input
+                type="text"
+                class="input-medida"
+                id="nombre"
+                placeholder=""
+              />
+            </div>
+            <div class="campo-medida">
+              <label class="label-medida">Email</label>
+              <input
+                type="email"
+                class="input-medida"
+                id="email"
+                placeholder=""
+              />
+            </div>
+            <div class="campo-medida">
+              <label class="label-medida">Telefono</label>
+              <input
+                type="tel"
+                class="input-medida"
+                id="telefono"
+                placeholder=""
+              />
+            </div>
+            <button class="btn-enviar" id="btn-enviar">Enviar</button>
           </div>
         </div>
       </div>
+    </section>
 
-      <p class="made">Hecho en nobsa</p>
-    </div>
-  </section>
-
-  <section class="procesos-hero">
-    <div class="pro-hero">
-      <p class="title-pro">Procesos</p>
-      <a href="procesos.html" class="btn-ver-mas-pro">Ver mas</a>
-
-      <div class="cards-pro">
-        <div class="card-pro">
-          <img src="IMAGENES/sacos.jpeg" alt="Sacos" class="card-pro-img" />
-          <div class="card-pro-info">
-            <span class="card-pro-nombre">Telar Horizontal</span>
-            <span class="card-pro-numero">01</span>
-          </div>
+    <footer class="footer">
+      <div class="footer-contenido">
+        <!-- Logo centrado -->
+        <div class="footer-logo-wrapper">
+          <img
+            src="LOGOS/LOGO-HEADER.svg"
+            alt="Logo Adfenesa"
+            class="footer-logo"
+          />
         </div>
 
-        <div class="card-pro destacada">
-          <img src="IMAGENES/modelo-3.png" alt="Ruanas" class="card-pro-img" />
-          <div class="card-pro-info">
-            <span class="card-pro-nombre">Telar Vertical</span>
-            <span class="card-pro-numero">02</span>
+        <!-- Fila principal -->
+        <div class="footer-fila">
+          <!-- Redes sociales -->
+          <div class="footer-redes">
+            <a href="#" class="footer-red"
+              ><i class="fi fi-brands-instagram"></i
+            ></a>
+            <a href="#" class="footer-red"
+              ><i class="fi fi-brands-facebook"></i
+            ></a>
           </div>
+
+          <!-- Links navegación -->
+          <nav class="footer-nav">
+            <a href="catalogo.html" class="footer-link">Catalogo</a>
+            <a href="historia.html" class="footer-link">Historia</a>
+            <a href="procesos.html" class="footer-link">Procesos</a>
+          </nav>
         </div>
 
-        <div class="card-pro">
-          <img src="IMAGENES/bolsos.jpeg" alt="Bolsos" class="card-pro-img" />
-          <div class="card-pro-info">
-            <span class="card-pro-nombre">Dos Agujas</span>
-            <span class="card-pro-numero">03</span>
-          </div>
-        </div>
+        <!-- Línea divisoria -->
+        <div class="footer-linea"></div>
+
+        <!-- Copyright -->
+        <p class="footer-copy">
+          ©2026 Adfenesa. Todos los derechos reservados.
+        </p>
       </div>
+    </footer>
 
-      <p class="pro-made">
-        Todos nuestros procesos <br />
-        son 100% artesanales y a mano.
-      </p>
-    </div>
-  </section>
-
-  <section class="medida-hero">
-    <div class="medida-contenido">
-      <p class="title-medida">A la medida</p>
-      <p class="desc-medida">
-        Si estas interesado en un producto
-        <span class="destacado-medida">A LA MEDIDA</span>, deja tus datos y te
-        contactaremos
-      </p>
-
-      <div class="medida-form-wrapper">
-        <h2 class="medida-titulo-form">CONTACTANOS</h2>
-
-
-        <div class="medida-form">
-          <div class="campo-medida">
-            <label class="label-medida">Nombre</label>
-            <input type="text" class="input-medida" id="nombre" placeholder="" />
-          </div>
-          <div class="campo-medida">
-            <label class="label-medida">Email</label>
-            <input type="email" class="input-medida" id="email" placeholder="" />
-          </div>
-          <div class="campo-medida">
-            <label class="label-medida">Telefono</label>
-            <input type="tel" class="input-medida" id="telefono" placeholder="" />
-          </div>
-          <button class="btn-enviar" id="btn-enviar">Enviar</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-contenido">
-
-      <!-- Logo centrado -->
-      <div class="footer-logo-wrapper">
-        <img src="LOGOS/LOGO-HEADER.svg" alt="Logo Adfenesa" class="footer-logo" />
-      </div>
-
-      <!-- Fila principal -->
-      <div class="footer-fila">
-        <!-- Redes sociales -->
-        <div class="footer-redes">
-          <a href="#" class="footer-red"><i class="fi fi-brands-instagram"></i></a>
-          <a href="#" class="footer-red"><i class="fi fi-brands-facebook"></i></a>
-        </div>
-
-        <!-- Links navegación -->
-        <nav class="footer-nav">
-          <a href="catalogo.html" class="footer-link">Catalogo</a>
-          <a href="historia.html" class="footer-link">Historia</a>
-          <a href="procesos.html" class="footer-link">Procesos</a>
-        </nav>
-      </div>
-
-      <!-- Línea divisoria -->
-      <div class="footer-linea"></div>
-
-      <!-- Copyright -->
-      <p class="footer-copy">©2026 Adfenesa. Todos los derechos reservados.</p>
-
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
-  <script src="index.js"></script>
-  <script src="medida.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <script src="index.js"></script>
+    <script src="medida.js"></script>
+  </body>
 </html>

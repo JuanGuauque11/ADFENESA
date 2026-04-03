@@ -263,3 +263,26 @@ gsap.to('.wd-pro', {
     toggleActions: 'play none none reverse'
   }
 });
+
+// ══════════════════════════════════════
+//  NAVBAR — Menú hamburguesa lateral
+// ══════════════════════════════════════
+const hamburger     = document.getElementById('hamburger');
+const drawer        = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawer-overlay');
+const drawerClose   = document.getElementById('drawer-close');
+
+hamburger.addEventListener('click', () => {
+  drawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+drawerClose.addEventListener('click', cerrarDrawer);
+drawerOverlay.addEventListener('click', cerrarDrawer);
+
+function cerrarDrawer() {
+  drawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}

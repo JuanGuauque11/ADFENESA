@@ -90,6 +90,103 @@ body {
   color: #d73300;
 }
 
+/* ── Hamburguesa ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #5C1200;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ── Drawer overlay ── */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(92, 18, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Drawer panel ── */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 300;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: -8px 0 32px rgba(92, 18, 0, 0.15);
+}
+
+.drawer.active {
+  right: 0;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #5C1200;
+  align-self: flex-end;
+  padding: 4px;
+}
+
+.drawer-logo {
+  height: 60px;
+  width: auto;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.drawer-link {
+  font-size: 32px;
+  font-weight: 500;
+  color: #5C1200;
+  text-decoration: none;
+  font-family: 'Melodrama', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.drawer-link:hover {
+  color: #D73300;
+}
+
 .hero {
   min-height: 100vh;
   overflow: hidden;
@@ -720,4 +817,24 @@ body {
   font-weight: 300;
   color: #5C1200;
   opacity: 0.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header {
+    width: 90%;
+    position: relative;
+  }
+
+  .header .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .log-adfenesa {
+    height: 70px;
+  }
 }
