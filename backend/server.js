@@ -1,3 +1,6 @@
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -5,7 +8,7 @@ const cors = require('cors');
 const app = express();
 const PORT = 3001;
 
-const MONGO_URI = 'mongodb+srv://adfenesa_clientes:TU_Adfenesa_DB_Clientes@adfenesa.uy2if2y.mongodb.net/a_la_medida?appName=adfenesa';
+const MONGO_URI = 'mongodb+srv://adfenesa_clientes:Adfenesa_DB_Clientes@adfenesa.uy2if2y.mongodb.net/a_la_medida?appName=adfenesa&family=4';
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ Conectado a MongoDB'))
