@@ -202,3 +202,64 @@ gsap.to('.wd-made', {
     toggleActions: 'play none none reverse'
   }
 });
+
+// ══════════════════════════════════════
+//  PROCESOS — Animación título "Procesos"
+//  Cortina hacia arriba — se repite al entrar
+// ══════════════════════════════════════
+gsap.set('.title-pro', { y: '100%' });
+
+ScrollTrigger.create({
+  trigger: '.title-pro',
+  start: 'top 90%',
+  toggleActions: 'play none none reset',
+  onEnter: () => gsap.to('.title-pro', { y: '0%', duration: 1, ease: 'power3.out' }),
+  onLeaveBack: () => gsap.set('.title-pro', { y: '100%' })
+});
+
+// ══════════════════════════════════════
+//  PROCESOS — Animación cards con scroll
+//  Cada card sube y aparece una por una
+// ══════════════════════════════════════
+gsap.set('.card-pro', { opacity: 0, y: 60 });
+
+ScrollTrigger.create({
+  trigger: '.cards-pro',
+  start: 'top 80%',
+  onEnter: () => {
+    gsap.to('.card-pro', {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.2
+    });
+  }
+});
+
+// ══════════════════════════════════════
+//  PROCESOS — Animación texto descripción
+//  Palabras desde abajo con blur
+// ══════════════════════════════════════
+const proMade = document.querySelector('.pro-made');
+proMade.innerHTML = 'Todos nuestros procesos son 100% artesanales y a mano.'.split(' ').map(w =>
+  `<span class="word-wrap" style="display:inline-block;overflow:hidden;vertical-align:bottom;margin-right:14px">
+    <span class="wd-pro" style="display:inline-block">${w}</span>
+  </span>`
+).join('');
+
+gsap.set('.wd-pro', { y: 60, opacity: 0, filter: 'blur(8px)' });
+
+gsap.to('.wd-pro', {
+  y: 0,
+  opacity: 1,
+  filter: 'blur(0px)',
+  duration: 0.9,
+  ease: 'power3.out',
+  stagger: 0.18,
+  scrollTrigger: {
+    trigger: '.pro-made',
+    start: 'top 95%',
+    toggleActions: 'play none none reverse'
+  }
+});
