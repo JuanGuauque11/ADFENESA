@@ -118,7 +118,7 @@ body {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(92, 18, 0, 0.4);
+  background: rgba(62, 61, 61, 0.175);
   backdrop-filter: blur(4px);
   z-index: 200;
   opacity: 0;
@@ -139,7 +139,7 @@ body {
   width: 75%;
   max-width: 300px;
   height: 100vh;
-  background: #ffffff;
+  background: #d73300;
   z-index: 300;
   padding: 40px 30px;
   display: flex;
@@ -171,13 +171,14 @@ body {
 .drawer-nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 28px;
 }
 
 .drawer-link {
   font-size: 32px;
-  font-weight: 500;
-  color: #5C1200;
+  font-weight: 200;
+  color: #ffffff;
   text-decoration: none;
   font-family: 'Melodrama', sans-serif;
   transition: color 0.3s ease;
@@ -822,19 +823,141 @@ body {
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .header {
-    width: 90%;
-    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    margin-top: 0;
+    height: auto;
+    flex-direction: column;
+    padding: 20px 0 10px;
+    gap: 10px;
   }
 
   .header .nav-links {
     display: none;
   }
 
-  .hamburger {
-    display: flex;
+  .log-adfenesa {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
   }
 
-  .log-adfenesa {
-    height: 70px;
+  .hamburger {
+    display: flex;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+    .drawer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 85%;
+    max-width: 340px;
+    height: auto;
+    min-height: 300px;
+    border-radius: 16px;
+    padding: 40px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .drawer.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+    right: auto;
+  }
+
+    /* ── Sección 1 Hero ── */
+  .title {
+    font-size: 90px;
+    top: 80px;
+  }
+
+  .modelo {
+    top: 150px;
+    height: 250px;
+  }
+
+  .aux {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 200px;
+    margin-top: 0;
+    white-space: nowrap;
+    font-size: 30px;
+  }
+
+  .aux-2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 150px;
+    right: auto;
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+    /* ── Historia ── */
+  .historia-hero {
+    min-height: auto;
+    margin-top: -120px;
+  }
+
+  .historia {
+    min-height: auto;
+    padding: 40px 20px 60px;
+    gap: 30px;
+  }
+
+  .title-historia {
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .imgs-historia {
+    width: 100%;
+  }
+
+  .hilandera,
+  .segundo,
+  .hijo,
+  .padre-hijo {
+    height: 120px;
+    width: 120px;
+  }
+
+  .cabeza-oveja {
+    display: none;
+  }
+
+  .btn-historia {
+    font-size: 18px;
+    margin: 20px;
+    padding: 8px 16px;
+  }
+
+  .descripcion-historia {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    font-size: 22px;
+    text-align: center;
+    padding: 0 20px;
   }
 }
