@@ -1,17 +1,11 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "User/FRONTEND",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
       "backend/**"
-    ],
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/User/FRONTEND/index.html"
-      }
     ]
   }
 }
