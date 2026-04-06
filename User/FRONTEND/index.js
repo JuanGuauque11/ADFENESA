@@ -1,4 +1,9 @@
 // ══════════════════════════════════════
+//  DETECCIÓN MÓVIL
+// ══════════════════════════════════════
+const isMobile = () => window.innerWidth <= 768;
+
+// ══════════════════════════════════════
 //  SCROLL SUAVE — Lenis
 // ══════════════════════════════════════
 const lenis = new Lenis({
@@ -8,17 +13,14 @@ const lenis = new Lenis({
   smoothTouch: false,
 });
 
-// Loop de animación necesario para que Lenis funcione
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
 
-let scrollTimeout;
-
 // ══════════════════════════════════════
-//  HERO — Animación imagen modelo
+//  HERO — Imagen modelo
 // ══════════════════════════════════════
 window.addEventListener('load', () => {
   gsap.fromTo('.modelo',
@@ -28,9 +30,7 @@ window.addEventListener('load', () => {
 });
 
 // ══════════════════════════════════════
-//  HERO — Animación textos auxiliares
-//  .aux     → "100% Artesanal" (entra desde la izquierda)
-//  .aux-2   → "Descubre"       (entra desde la derecha)
+//  HERO — Textos auxiliares
 // ══════════════════════════════════════
 gsap.fromTo('.aux',
   { opacity: 0, x: -60 },
@@ -42,11 +42,22 @@ gsap.fromTo('.aux-2',
   { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
 );
 
+// ══════════════════════════════════════
+//  HERO — Parallax cursor (solo desktop)
+// ══════════════════════════════════════
+if (!isMobile()) {
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth  - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    gsap.to('.modelo', { x, y, duration: 0.8, ease: 'power2.out' });
+  });
+}
 
 // ══════════════════════════════════════
-//  HISTORIA — Animación título "Historia"
-//  Cortina hacia arriba — se repite al entrar
+//  HISTORIA — Título
 // ══════════════════════════════════════
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.set('.title-historia', { y: '100%' });
 
 ScrollTrigger.create({
@@ -58,54 +69,58 @@ ScrollTrigger.create({
 });
 
 // ══════════════════════════════════════
-//  HISTORIA — Imágenes controladas por scroll
-//  Cada scroll revela una imagen nueva
-//  La sección se fija mientras aparecen
+//  HISTORIA — Imágenes
+//  Móvil:   cartas que se lanzan al centro
+//  Desktop: pin + scrub
 // ══════════════════════════════════════
-gsap.registerPlugin(ScrollTrigger);
+if (isMobile()) {
+  gsap.set('.hilandera',  { opacity: 0, scale: 0.8, rotation: -12, x: -40, y: 20 });
+  gsap.set('.segundo',    { opacity: 0, scale: 0.8, rotation:   8, x:  30, y: -10 });
+  gsap.set('.hijo',       { opacity: 0, scale: 0.8, rotation:  -5, x: -20, y:  30 });
+  gsap.set('.padre-hijo', { opacity: 0, scale: 0.8, rotation:  10, x:  25, y: -20 });
 
-gsap.set(['.hilandera', '.segundo', '.hijo', '.padre-hijo'], { opacity: 0, y: 60 });
-
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.historia-hero',
-    start: 'top top',
-    end: '+=400%',
-    scrub: 0.1,
-    pin: true,
-    snap: 1 / 3,
-  }
-});
-
-tl.to('.hilandera',     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-  .to('.segundo',   { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-  .to('.hijo',       { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
-  .to('.padre-hijo', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' });
-
-// ══════════════════════════════════════
-//  HERO — Efecto parallax con cursor
-//  La imagen sigue el cursor en toda la ventana
-// ══════════════════════════════════════
-document.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth  - 0.5) * 10;
-  const y = (e.clientY / window.innerHeight - 0.5) * 10;
-
-  gsap.to('.modelo', {
-    x: x,
-    y: y,
-    duration: 0.8,
-    ease: 'power2.out'
+  const tlMobile = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.historia-hero',
+      start: 'top top',
+      end: '+=350%',
+      scrub: 0.3,
+      pin: true,
+    }
   });
-});
+
+  tlMobile
+    .to('.hilandera',  { opacity: 1, scale: 1, rotation: -8, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.segundo',    { opacity: 1, scale: 1, rotation:  5, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.hijo',       { opacity: 1, scale: 1, rotation: -4, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.padre-hijo', { opacity: 1, scale: 1, rotation:  6, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' });
+
+} else {
+  gsap.set(['.hilandera', '.segundo', '.hijo', '.padre-hijo'], { opacity: 0, y: 60 });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.historia-hero',
+      start: 'top top',
+      end: '+=400%',
+      scrub: 0.1,
+      pin: true,
+      snap: 1 / 3,
+    }
+  });
+
+  tl.to('.hilandera',  { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
+    .to('.segundo',    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
+    .to('.hijo',       { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
+    .to('.padre-hijo', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' });
+}
 
 // ══════════════════════════════════════
-//  HISTORIA — Animación texto descripción
-//  Las palabras cambian de opaco a #5C1200
-//  conforme se hace scroll
+//  HISTORIA — Texto descripción
 // ══════════════════════════════════════
 const descripcion = document.querySelector('.descripcion-historia');
 
-const html = descripcion.innerHTML
+const htmlDesc = descripcion.innerHTML
   .replace(/(<br\s*\/?>)/gi, ' |BR| ')
   .trim()
   .split(/\s+/)
@@ -116,7 +131,7 @@ const html = descripcion.innerHTML
       : '')
   .join(' ');
 
-descripcion.innerHTML = html;
+descripcion.innerHTML = htmlDesc;
 
 gsap.set('.palabra', { color: 'rgba(92, 18, 0, 0.15)' });
 
@@ -132,39 +147,41 @@ gsap.to('.palabra', {
 });
 
 // ══════════════════════════════════════
-//  HISTORIA — Animación cabeza de oveja
-//  Entra desde la derecha al hacer scroll
+//  HISTORIA — Cabeza de oveja (solo desktop)
 // ══════════════════════════════════════
-gsap.fromTo('.cabeza-oveja',
-  { opacity: 0, x: 60 },
-  { opacity: 1, x: 0, duration: 10, ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.cabeza-oveja',
-      start: 'top 90%',
-      toggleActions: 'play none none reverse'
+if (!isMobile()) {
+  gsap.fromTo('.cabeza-oveja',
+    { opacity: 0, x: 60 },
+    { opacity: 1, x: 0, duration: 10, ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.cabeza-oveja',
+        start: 'top 90%',
+        toggleActions: 'play none none reverse'
+      }
     }
-  }
-);
-
-gsap.set('.card-cat', { opacity: 0, y: 60 });
-
-ScrollTrigger.create({
-  trigger: '.cards-catalogo',
-  start: 'top 80%',
-  onEnter: () => {
-    gsap.to('.card-cat', {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.2
-    });
-  }
-});
+  );
+}
 
 // ══════════════════════════════════════
-//  CATÁLOGO — Animación título "Catalogo"
-//  Cortina hacia arriba — se repite al entrar
+//  CATÁLOGO — Cards (solo desktop)
+// ══════════════════════════════════════
+if (!isMobile()) {
+  gsap.set('.card-cat', { opacity: 0, y: 60 });
+
+  ScrollTrigger.create({
+    trigger: '.cards-catalogo',
+    start: 'top 80%',
+    onEnter: () => {
+      gsap.to('.card-cat', {
+        opacity: 1, y: 0, duration: 0.7,
+        ease: 'power3.out', stagger: 0.2
+      });
+    }
+  });
+}
+
+// ══════════════════════════════════════
+//  CATÁLOGO — Título
 // ══════════════════════════════════════
 gsap.set('.title-cat', { y: '100%' });
 
@@ -177,8 +194,7 @@ ScrollTrigger.create({
 });
 
 // ══════════════════════════════════════
-//  CATÁLOGO — Animación "Hecho en nobsa"
-//  Palabras desde abajo con blur — Splitting.js + GSAP
+//  CATÁLOGO — "Hecho en nobsa"
 // ══════════════════════════════════════
 const made = document.querySelector('.made');
 made.innerHTML = 'Hecho en nobsa'.split(' ').map(w =>
@@ -190,12 +206,8 @@ made.innerHTML = 'Hecho en nobsa'.split(' ').map(w =>
 gsap.set('.wd-made', { y: 60, opacity: 0, filter: 'blur(8px)' });
 
 gsap.to('.wd-made', {
-  y: 0,
-  opacity: 1,
-  filter: 'blur(0px)',
-  duration: 0.9,
-  ease: 'power3.out',
-  stagger: 0.18,
+  y: 0, opacity: 1, filter: 'blur(0px)',
+  duration: 0.9, ease: 'power3.out', stagger: 0.18,
   scrollTrigger: {
     trigger: '.made',
     start: 'top 95%',
@@ -204,8 +216,7 @@ gsap.to('.wd-made', {
 });
 
 // ══════════════════════════════════════
-//  PROCESOS — Animación título "Procesos"
-//  Cortina hacia arriba — se repite al entrar
+//  PROCESOS — Título
 // ══════════════════════════════════════
 gsap.set('.title-pro', { y: '100%' });
 
@@ -218,28 +229,25 @@ ScrollTrigger.create({
 });
 
 // ══════════════════════════════════════
-//  PROCESOS — Animación cards con scroll
-//  Cada card sube y aparece una por una
+//  PROCESOS — Cards (solo desktop)
 // ══════════════════════════════════════
-gsap.set('.card-pro', { opacity: 0, y: 60 });
+if (!isMobile()) {
+  gsap.set('.card-pro', { opacity: 0, y: 60 });
 
-ScrollTrigger.create({
-  trigger: '.cards-pro',
-  start: 'top 80%',
-  onEnter: () => {
-    gsap.to('.card-pro', {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.2
-    });
-  }
-});
+  ScrollTrigger.create({
+    trigger: '.cards-pro',
+    start: 'top 80%',
+    onEnter: () => {
+      gsap.to('.card-pro', {
+        opacity: 1, y: 0, duration: 0.7,
+        ease: 'power3.out', stagger: 0.2
+      });
+    }
+  });
+}
 
 // ══════════════════════════════════════
-//  PROCESOS — Animación texto descripción
-//  Palabras desde abajo con blur
+//  PROCESOS — Texto descripción
 // ══════════════════════════════════════
 const proMade = document.querySelector('.pro-made');
 proMade.innerHTML = 'Todos nuestros procesos son 100% artesanales y a mano.'.split(' ').map(w =>
@@ -251,12 +259,8 @@ proMade.innerHTML = 'Todos nuestros procesos son 100% artesanales y a mano.'.spl
 gsap.set('.wd-pro', { y: 60, opacity: 0, filter: 'blur(8px)' });
 
 gsap.to('.wd-pro', {
-  y: 0,
-  opacity: 1,
-  filter: 'blur(0px)',
-  duration: 0.9,
-  ease: 'power3.out',
-  stagger: 0.18,
+  y: 0, opacity: 1, filter: 'blur(0px)',
+  duration: 0.9, ease: 'power3.out', stagger: 0.18,
   scrollTrigger: {
     trigger: '.pro-made',
     start: 'top 95%',
@@ -265,24 +269,30 @@ gsap.to('.wd-pro', {
 });
 
 // ══════════════════════════════════════
-//  NAVBAR — Menú hamburguesa lateral
+//  NAVBAR — Menú hamburguesa
 // ══════════════════════════════════════
-const hamburger     = document.getElementById('hamburger');
-const drawer        = document.getElementById('drawer');
-const drawerOverlay = document.getElementById('drawer-overlay');
-const drawerClose   = document.getElementById('drawer-close');
+{
+  const hamburgerBtn    = document.getElementById('hamburger');
+  const drawerEl        = document.getElementById('drawer');
+  const drawerOverlayEl = document.getElementById('drawer-overlay');
+  const drawerCloseBtn  = document.getElementById('drawer-close');
 
-hamburger.addEventListener('click', () => {
-  drawer.classList.add('active');
-  drawerOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-});
+  function cerrarDrawer() {
+    drawerEl.classList.remove('active');
+    drawerOverlayEl.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-drawerClose.addEventListener('click', cerrarDrawer);
-drawerOverlay.addEventListener('click', cerrarDrawer);
+  hamburgerBtn.addEventListener('click', () => {
+    drawerEl.classList.add('active');
+    drawerOverlayEl.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
 
-function cerrarDrawer() {
-  drawer.classList.remove('active');
-  drawerOverlay.classList.remove('active');
-  document.body.style.overflow = '';
+  drawerCloseBtn.addEventListener('click', cerrarDrawer);
+  drawerOverlayEl.addEventListener('click', cerrarDrawer);
+
+  document.querySelectorAll('.drawer-link').forEach(link => {
+    link.addEventListener('click', cerrarDrawer);
+  });
 }
