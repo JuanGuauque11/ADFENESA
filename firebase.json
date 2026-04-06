@@ -6,6 +6,12 @@
       "**/.*",
       "**/node_modules/**",
       "backend/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/User/FRONTEND/index.html"
+      }
     ]
   }
 }
