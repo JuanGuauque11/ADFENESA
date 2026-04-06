@@ -1,11 +1,30 @@
 {
-  "hosting": {
-    "public": "User/FRONTEND",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      "backend/**"
-    ]
-  }
+  "hosting": [
+    {
+      "target": "public",
+      "public": "User/FRONTEND",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        "backend/**"
+      ],
+      "rewrites": [
+        { "source": "**", "destination": "/index.html" }
+      ]
+    },
+    {
+      "target": "admin",
+      "public": "Admin/files",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**",
+        "backend/**"
+      ],
+      "rewrites": [
+        { "source": "**", "destination": "/login.html" }
+      ]
+    }
+  ]
 }

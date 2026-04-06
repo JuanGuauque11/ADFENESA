@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "adfenesa"
-  }
+  },
+  "targets": {
+    "adfenesa": {
+      "hosting": {
+        "public": [
+          "adfenesa"
+        ],
+        "admin": [
+          "adfenesa-admin"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

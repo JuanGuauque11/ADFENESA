@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Melodrama-Bold, Melodrama;
+        font-size: 71px;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #5c1200;
+      }
+
+      .cls-3 {
+        letter-spacing: .08em;
+      }
+
+      .cls-4 {
+        letter-spacing: .08em;
+      }
+
+      .cls-5 {
+        letter-spacing: .08em;
+      }
+
+      .cls-6 {
+        letter-spacing: .08em;
+      }
+
+      .cls-7 {
+        letter-spacing: .06em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-2 {
+        font-family: ClashDisplayVariable-Light, 'Clash Display Variable';
+        font-size: 31px;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(124.65 303.88) scale(1.04 1)"><tspan class="cls-7" x="0" y="0">A</tspan><tspan class="cls-6" x="41.39" y="0">d</tspan><tspan class="cls-8" x="94.93" y="0">f</tspan><tspan class="cls-3" x="122.62" y="0">en</tspan><tspan class="cls-4" x="216.05" y="0">e</tspan><tspan class="cls-5" x="265.32" y="0">sa</tspan></text>
+  <text class="cls-2" transform="translate(198.37 349) scale(.92 1)"><tspan x="0" y="0">Tejidos e Hilados</tspan></text>
+</svg>
