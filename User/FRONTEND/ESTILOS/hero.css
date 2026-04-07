@@ -109,7 +109,7 @@ body {
   display: block;
   width: 24px;
   height: 2px;
-  background: #5C1200;
+  background: #5c1200;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -158,7 +158,7 @@ body {
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #5C1200;
+  color: #5c1200;
   align-self: flex-end;
   padding: 4px;
 }
@@ -180,12 +180,12 @@ body {
   font-weight: 200;
   color: #ffffff;
   text-decoration: none;
-  font-family: 'Melodrama', sans-serif;
+  font-family: "Melodrama", sans-serif;
   transition: color 0.3s ease;
 }
 
 .drawer-link:hover {
-  color: #D73300;
+  color: #d73300;
 }
 
 .hero {
@@ -617,19 +617,19 @@ body {
 .title-medida {
   font-size: 50px;
   font-weight: 500;
-  color: #D73300;
+  color: #d73300;
   margin-bottom: 10px;
 }
 
 .desc-medida {
   font-size: 18px;
   font-weight: 300;
-  color: #5C1200;
+  color: #5c1200;
   margin-bottom: 40px;
 }
 
 .destacado-medida {
-  color: #D73300;
+  color: #d73300;
   font-weight: 600;
 }
 
@@ -639,7 +639,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   min-height: 600px;
-  background-image: url('../IMAGENES/oveja-lejos.jpg');
+  background-image: url("../IMAGENES/oveja-lejos.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -650,7 +650,7 @@ body {
 
 /* Overlay oscuro */
 .medida-form-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
@@ -698,9 +698,9 @@ body {
 .input-medida {
   background: transparent;
   border: none;
-  border-bottom: 2px solid #D73300;
+  border-bottom: 2px solid #d73300;
   color: #ffffff;
-  font-family: 'Melodrama', sans-serif;
+  font-family: "Melodrama", sans-serif;
   font-size: 16px;
   padding: 8px 0;
   outline: none;
@@ -717,27 +717,29 @@ body {
 }
 
 .btn-enviar {
-  background: #D73300;
+  background: #d73300;
   border: none;
   border-radius: 4px;
   color: #ffffff;
   cursor: pointer;
-  font-family: 'Melodrama', sans-serif;
+  font-family: "Melodrama", sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.12em;
   padding: 12px 40px;
   margin-top: 10px;
-  transition: background 0.3s ease, transform 0.15s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.15s ease;
 }
 
 .btn-enviar:hover {
-  background: #5C1200;
+  background: #5c1200;
   transform: translateY(-1px);
 }
 
 .footer {
-  background-color: #D73300;
+  background-color: #d73300;
   padding: 50px;
 }
 
@@ -756,7 +758,8 @@ body {
 .footer-logo {
   height: 80px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(13%) sepia(40%) saturate(800%) hue-rotate(340deg) brightness(60%);
+  filter: brightness(0) saturate(100%) invert(13%) sepia(40%) saturate(800%)
+    hue-rotate(340deg) brightness(60%);
 }
 
 /* ── Fila principal ── */
@@ -773,7 +776,7 @@ body {
 }
 
 .footer-red {
-  color: #5C1200;
+  color: #5c1200;
   font-size: 24px;
   text-decoration: none;
   transition: opacity 0.3s ease;
@@ -792,10 +795,10 @@ body {
 }
 
 .footer-link {
-  color: #5C1200;
+  color: #5c1200;
   font-size: 24px;
   font-weight: 400;
-  font-family: 'Melodrama', sans-serif;
+  font-family: "Melodrama", sans-serif;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -808,7 +811,7 @@ body {
 .footer-linea {
   width: 100%;
   height: 1px;
-  background: #5C1200;
+  background: #5c1200;
   opacity: 0.4;
 }
 
@@ -816,21 +819,21 @@ body {
 .footer-copy {
   font-size: 13px;
   font-weight: 300;
-  color: #5C1200;
+  color: #5c1200;
   opacity: 0.7;
 }
 
 /* ── Responsive ── */
-@media (max-width: 430px){
- /* ── Header ── */
+@media (max-width: 430px) {
+  /* ── Header ── */
   .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;  /* logo al centro */
-  align-items: center;
-  padding: 0 20px;
-  height: 70px;
-  position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* logo al centro */
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: relative;
   }
 
   .header .nav-links {
@@ -845,8 +848,8 @@ body {
   }
 
   .hamburger {
-  position: absolute;  /* hamburger fijo a la derecha */
-  right: 20px;
+    position: absolute; /* hamburger fijo a la derecha */
+    right: 20px;
   }
 
   /* ── Drawer — panel lateral desde la derecha ── */
@@ -873,36 +876,51 @@ body {
     pointer-events: all;
   }
 
-  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .presentacion {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .title {
     font-size: clamp(70px, 20vw, 120px);
     top: 80px;
+    text-align: center;
   }
 
   .modelo {
     height: 280px;
-    bottom: 60px;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .aux {
     position: absolute;
-    left: 20px;
-    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
     right: auto;
-    transform: none;
-    font-size: 22px;
+    font-size: 18px;
     white-space: nowrap;
-    margin-top: 0;
+    text-align: center;
   }
 
   .aux-2 {
     position: absolute;
-    right: 20px;
-    bottom: 180px;
-    left: auto;
-    transform: none;
-    font-size: 22px;
-    margin-top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    right: auto;
+    font-size: 18px;
+    text-align: center;
   }
 
   /* ── Historia ── */
@@ -924,31 +942,39 @@ body {
     text-align: left;
   }
 
-/* ── Historia — imágenes en abanico ── */
-.imgs-historia {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 20px auto;
-}
+  /* ── Historia — imágenes en abanico ── */
+  .imgs-historia {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+  }
 
-.hilandera,
-.segundo,
-.hijo,
-.padre-hijo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 220px;
-  border-radius: 16px;
-  object-fit: cover;
-}
+  .hilandera,
+  .segundo,
+  .hijo,
+  .padre-hijo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
 
-.hilandera   { z-index: 1; }
-.segundo     { z-index: 2; }
-.hijo        { z-index: 3; }
-.padre-hijo  { z-index: 4; }
+  .hilandera {
+    z-index: 1;
+  }
+  .segundo {
+    z-index: 2;
+  }
+  .hijo {
+    z-index: 3;
+  }
+  .padre-hijo {
+    z-index: 4;
+  }
 
   .cabeza-oveja {
     display: none;
@@ -1138,16 +1164,17 @@ body {
    ══════════════════════════════════════ */
 
 @media (max-width: 768px) {
-
   /* ── Header ── */
   .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;  /* logo al centro */
+  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
   height: 70px;
   position: relative;
+  width: 90%;
+  margin: 20px auto 0;
   }
 
   .header .nav-links {
@@ -1162,8 +1189,11 @@ body {
   }
 
   .hamburger {
-  position: absolute;  /* hamburger fijo a la derecha */
+  display: flex !important;
+  position: absolute;
   right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   }
 
   /* ── Drawer — panel lateral desde la derecha ── */
@@ -1190,36 +1220,51 @@ body {
     pointer-events: all;
   }
 
-  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .presentacion {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .title {
     font-size: clamp(70px, 20vw, 120px);
     top: 80px;
+    text-align: center;
   }
 
   .modelo {
     height: 280px;
-    bottom: 60px;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .aux {
     position: absolute;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 180px;
     right: auto;
-    transform: none;
-    font-size: 22px;
+    font-size: 30px;
     white-space: nowrap;
-    margin-top: 0;
+    text-align: center;
   }
 
   .aux-2 {
     position: absolute;
-    right: 20px;
-    bottom: 180px;
-    left: auto;
-    transform: none;
-    font-size: 22px;
-    margin-top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 150px;
+    right: auto;
+    font-size: 18px;
+    text-align: center;
   }
 
   /* ── Historia ── */
@@ -1241,31 +1286,39 @@ body {
     text-align: left;
   }
 
-/* ── Historia — imágenes en abanico ── */
-.imgs-historia {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 20px auto;
-}
+  /* ── Historia — imágenes en abanico ── */
+  .imgs-historia {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+  }
 
-.hilandera,
-.segundo,
-.hijo,
-.padre-hijo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 220px;
-  border-radius: 16px;
-  object-fit: cover;
-}
+  .hilandera,
+  .segundo,
+  .hijo,
+  .padre-hijo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
 
-.hilandera   { z-index: 1; }
-.segundo     { z-index: 2; }
-.hijo        { z-index: 3; }
-.padre-hijo  { z-index: 4; }
+  .hilandera {
+    z-index: 1;
+  }
+  .segundo {
+    z-index: 2;
+  }
+  .hijo {
+    z-index: 3;
+  }
+  .padre-hijo {
+    z-index: 4;
+  }
 
   .cabeza-oveja {
     display: none;

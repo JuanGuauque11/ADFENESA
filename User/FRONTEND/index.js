@@ -32,15 +32,24 @@ window.addEventListener('load', () => {
 // ══════════════════════════════════════
 //  HERO — Textos auxiliares
 // ══════════════════════════════════════
-gsap.fromTo('.aux',
-  { opacity: 0, x: -60 },
-  { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
-);
-
-gsap.fromTo('.aux-2',
-  { opacity: 0, x: 60 },
-  { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
-);
+if (isMobile()) {
+  gsap.fromTo('.aux',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
+  );
+  gsap.fromTo('.aux-2',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', delay: 1.8 }
+  );
+} else {
+  gsap.fromTo('.aux',
+    { opacity: 0, x: -60 },
+    { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
+  );
+  gsap.fromTo('.aux-2',
+    { opacity: 0, x: 60 },
+    { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
+  );
 
 // ══════════════════════════════════════
 //  HERO — Parallax cursor (solo desktop)
@@ -295,4 +304,5 @@ gsap.to('.wd-pro', {
   document.querySelectorAll('.drawer-link').forEach(link => {
     link.addEventListener('click', cerrarDrawer);
   });
+}
 }
