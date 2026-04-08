@@ -50,7 +50,7 @@ if (isMobile()) {
     { opacity: 0, x: 60 },
     { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out', delay: 1.5 }
   );
-
+}
 // ══════════════════════════════════════
 //  HERO — Parallax cursor (solo desktop)
 // ══════════════════════════════════════
@@ -305,4 +305,4 @@ if (hamburgerBtn) {
     link.addEventListener('click', cerrarDrawer);
   });
 }
-}
+
