@@ -280,12 +280,12 @@ gsap.to('.wd-pro', {
 // ══════════════════════════════════════
 //  NAVBAR — Menú hamburguesa
 // ══════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburgerBtn    = document.getElementById('hamburger');
-  const drawerEl        = document.getElementById('drawer');
-  const drawerOverlayEl = document.getElementById('drawer-overlay');
-  const drawerCloseBtn  = document.getElementById('drawer-close');
+const hamburgerBtn    = document.getElementById('hamburger');
+const drawerEl        = document.getElementById('drawer');
+const drawerOverlayEl = document.getElementById('drawer-overlay');
+const drawerCloseBtn  = document.getElementById('drawer-close');
 
+if (hamburgerBtn) {
   function cerrarDrawer() {
     drawerEl.classList.remove('active');
     drawerOverlayEl.classList.remove('active');
@@ -304,5 +304,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.drawer-link').forEach(link => {
     link.addEventListener('click', cerrarDrawer);
   });
-});
+}
 }
