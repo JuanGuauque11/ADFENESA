@@ -260,6 +260,48 @@ body {
 .aux-2 {
   opacity: 0;
 }
+/* ═══════════════════ MARQUEE ═══════════════════ */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  border-top: 1px solid rgba(92, 18, 0, 0.15);
+  border-bottom: 1px solid rgba(92, 18, 0, 0.15);
+  background: #d73300;
+}
+
+.marquee-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: marquee 20s linear infinite reverse;
+}
+
+.marquee-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-right: 40px;
+  font-family: 'Melodrama', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.marquee-logo {
+  height: 24px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 .historia-hero {
   min-height: 100vh;
@@ -887,7 +929,7 @@ body {
   }
 
   .hero {
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
   }
 
@@ -900,14 +942,14 @@ body {
   }
 
   .title {
-    font-size: clamp(70px, 20vw, 120px);
-    top: 80px;
+    font-size: 90px;
+    top: 100px;
     text-align: center;
   }
 
   .modelo {
     height: 280px;
-    top: 150px;
+    bottom: 250px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -916,7 +958,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 180px;
+    bottom: 150px;
     right: auto;
     font-size: 30px;
     white-space: nowrap;
@@ -927,7 +969,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 150px;
+    bottom: 120px;
     right: auto;
     font-size: 18px;
     text-align: center;

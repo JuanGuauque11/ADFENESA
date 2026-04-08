@@ -306,3 +306,7 @@ if (hamburgerBtn) {
   });
 }
 
+// ── Desactivar pin en móvil para historia ──
+if (isMobile()) {
+  ScrollTrigger.config({ limitCallbacks: true });
+}
