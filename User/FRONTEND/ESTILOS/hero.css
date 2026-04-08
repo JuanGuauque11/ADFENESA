@@ -573,6 +573,17 @@ body {
   color: #d73300;
 }
 
+.iglesia-procesos {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 150%;
+  width: auto;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ── Cards ── */
 
 .cards-pro {

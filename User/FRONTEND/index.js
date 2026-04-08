@@ -310,3 +310,36 @@ if (hamburgerBtn) {
 if (isMobile()) {
   ScrollTrigger.config({ limitCallbacks: true });
 }
+
+// ══════════════════════════════════════
+//  PROCESOS — Iglesia parallax + fade
+// ══════════════════════════════════════
+gsap.fromTo('.iglesia-procesos',
+  { opacity: 0, x: 80 },
+  {
+    opacity: 0.3,
+    x: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.procesos-hero',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    }
+  }
+);
+
+// ══════════════════════════════════════
+//  PROCESOS — Iglesia parallax con cursor
+// ══════════════════════════════════════
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth  - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  gsap.to('.iglesia-procesos', {
+    x: x,
+    y: y,
+    duration: 1.2,
+    ease: 'power2.out'
+  });
+});
