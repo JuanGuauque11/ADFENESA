@@ -406,7 +406,7 @@ body {
   position: absolute;
   left: 50px;
   bottom: 25px;
-  font-size: 35px;
+  font-size: 50px;
   color: #5c1200;
 }
 
@@ -653,7 +653,7 @@ body {
 
 .pro-made {
   position: absolute;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: 300;
   color: #5c1200;
   bottom: 20px;
@@ -1144,6 +1144,11 @@ body {
     font-size: 14px;
     padding: 8px 24px;
   }
+
+.iglesia-procesos {
+  height: 100%;
+  bottom: 50px;
+}
 
   .cards-pro {
     display: flex;
