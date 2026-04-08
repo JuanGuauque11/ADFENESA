@@ -161,3 +161,27 @@ modalOverlay.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") cerrarModal();
 });
+
+  const hamburgerBtn    = document.getElementById('hamburger');
+  const drawerEl        = document.getElementById('drawer');
+  const drawerOverlayEl = document.getElementById('drawer-overlay');
+  const drawerCloseBtn  = document.getElementById('drawer-close');
+
+  function cerrarDrawer() {
+    drawerEl.classList.remove('active');
+    drawerOverlayEl.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', () => {
+    drawerEl.classList.add('active');
+    drawerOverlayEl.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  drawerCloseBtn.addEventListener('click', cerrarDrawer);
+  drawerOverlayEl.addEventListener('click', cerrarDrawer);
+
+  document.querySelectorAll('.drawer-link').forEach(link => {
+    link.addEventListener('click', cerrarDrawer);
+  });
