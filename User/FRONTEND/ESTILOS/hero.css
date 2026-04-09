@@ -1225,3 +1225,81 @@ body {
     font-size: 18px;
   }
 }
+
+@media (max-width: 1370px){
+   /* ── Historia ── */
+  .title-historia {
+    font-size: 70px;
+    top: 20px;
+  }
+
+  .imgs-historia {
+    top: -40px;
+  }
+
+  .hilandera,
+  .segundo,
+  .hijo,
+  .padre-hijo {
+    height: 180px;
+    width: 180px;
+  }
+
+  .btn-historia {
+    font-size: 20px;
+    margin: 30px;
+  }
+
+  .descripcion-historia {
+    font-size: 32px;
+    bottom: 10px;
+  }
+
+  .cabeza-oveja {
+    height: 700px;
+  }
+
+  /* ── Catálogo ── */
+  .cards-catalogo {
+    margin-top: 10px;
+  }
+
+  .card-cat {
+    width: 200px;
+    height: 280px;
+  }
+
+  .card-cat.destacada {
+    width: 230px;
+    height: 320px;
+  }
+
+  .made {
+    font-size: 36px;
+    bottom: 5px;
+  }
+
+  /* ── Procesos ── */
+  .cards-pro {
+    margin-top: 10px;
+  }
+
+  .card-pro {
+    width: 200px;
+    height: 280px;
+  }
+
+  .card-pro.destacada {
+    width: 230px;
+    height: 320px;
+  }
+
+  .pro-made {
+    font-size: 32px;
+    bottom: 5px;
+  }
+
+  .iglesia-procesos {
+    height: 120%;
+  }
+}
