@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historia-ADFENESA</title>
+    <link rel="stylesheet" href="ESTILOS/historia.css" />
+    <link rel="icon" href="LOGOS/LOGO-HEADER.svg" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css" />
+</head>
+
+<body>
+    <header class="header">
+        <img src="LOGOS/LOGO-HEADER.svg" alt="logo de marca" class="log-adfenesa" />
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="procesos.html">Procesos</a></li>
+            </ul>
+        </nav>
+        <!-- Botón hamburguesa solo visible en móvil -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Menú lateral drawer -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="drawer" id="drawer">
+        <button class="drawer-close" id="drawer-close">✕</button>
+        <img src="LOGOS/Mesa de trabajo 13.svg" alt="Logo" class="drawer-logo" />
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link">Inicio</a>
+            <a href="catalogo.html" class="drawer-link">Catalogo</a>
+            <a href="procesos.html" class="drawer-link">Procesos</a>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="historia">
+            <h1 class="historia-title">
+                HISTORIA
+            </h1>
+        </div>
+
+        <div class="hero-imagen-bloque">
+            <img class="hero-foto" src="IMAGENES/transito.jpg" alt="Artesano trabajando" />
+            <div class="hero-descripcion">
+                <p>
+                    Transito aprendio este arte de su padre, Jesus Cruz
+                    a mediados de 1920, habiendo aprendido este arte compro
+                    la casa donde hasta dia de doy se conserva el taller, en el cual
+                    se han formado varias generaciones
+                    de artesanos, entre ellos su hijo y nietos.
+                </p>
+            </div>
+    </section>
+
+    <section class="imagen-seccion">
+        <div class="imagen-seccion-inner">
+            <div class="img-wrapper">
+                <img src="IMAGENES/Segundo-Telar.png" alt="Segundo Cruz" class="img-historia" />
+            </div>
+            <div class="img-descripcion">
+                <p>Segundo Cruz, ingeniero metalúrgico de profesión, aprendió este arte de su madre Tránsito.
+                    Considerado como uno de los mejores en el oficio de la elaboración de ruanas, que han llegado a los
+                    rincones del mundo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGEN 3 -->
+    <section class="imagen-seccion">
+        <div class="imagen-seccion-inner">
+            <div class="img-wrapper">
+                <img src="IMAGENES/Felipe-Telar.png" alt="Andrés Felipe" class="img-historia" />
+            </div>
+            <div class="img-descripcion">
+                <p>Andrés Felipe, hoy gerente de esta empresa, aprendió de su padre Segundo. Ha mantenido el legado de
+                    su familia hasta el día de hoy y espera conservarlo por largo tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGEN 4 -->
+    <section class="imagen-seccion">
+        <div class="imagen-seccion-inner">
+            <div class="img-wrapper">
+                <img src="IMAGENES/Segundo-Nieto.png" alt="La cuarta generación" class="img-historia" />
+            </div>
+            <div class="img-descripcion">
+                <p>Segundo es el encargado de enseñar este arte a sus nietos, la cuarta generación: Gael, hijo de María
+                    Angélica, y Juan Felipe, hijo de Andrés Felipe. Ellos serán los encargados de que este arte se
+                    mantenga por más generaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <!-- Logo centrado -->
+            <div class="footer-logo-wrapper">
+                <img src="LOGOS/LOGO-HEADER.svg" alt="Logo Adfenesa" class="footer-logo" />
+            </div>
+
+            <!-- Fila principal -->
+            <div class="footer-fila">
+                <!-- Redes sociales -->
+                <div class="footer-redes">
+                    <a href="#" class="footer-red"><i class="fi fi-brands-instagram"></i></a>
+                    <a href="#" class="footer-red"><i class="fi fi-brands-facebook"></i></a>
+                </div>
+
+                <!-- Links navegación -->
+                <nav class="footer-nav">
+                    <a href="catalogo.html" class="footer-link">Catalogo</a>
+                    <a href="historia.html" class="footer-link">Historia</a>
+                    <a href="procesos.html" class="footer-link">Procesos</a>
+                </nav>
+            </div>
+
+            <!-- Línea divisoria -->
+            <div class="footer-linea"></div>
+
+            <!-- Copyright -->
+            <p class="footer-copy">
+                ©2026 Adfenesa. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="historia.js"></script>
+</body>
+
+</html>
