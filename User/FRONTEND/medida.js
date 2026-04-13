@@ -10,11 +10,22 @@ btnEnviar.addEventListener('click', async () => {
   const email    = document.getElementById('email').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
 
+
+  // Validación de formato de email
+function emailValido(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+}
+
   // Validación básica
-  if (!nombre || !email || !telefono) {
-    alert('Por favor completa todos los campos.');
-    return;
-  }
+if (!nombre || !email || !telefono) {
+  alert('Por favor completa todos los campos.');
+  return;
+}
+
+if (!emailValido(email)) {
+  alert('Por favor ingresá un email válido. Ej: nombre@dominio.com');
+  return;
+}
 
   // Deshabilitar botón mientras se envía
   btnEnviar.disabled = true;
