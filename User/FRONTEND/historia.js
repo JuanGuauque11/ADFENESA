@@ -157,3 +157,51 @@ function cerrarDrawer() {
   drawer.classList.remove('active');
   drawerOverlay.classList.remove('active');
 }
+
+gsap.to('.taller-deco', {
+  yPercent: -20,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.hero',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: 1.5
+  }
+});
+
+// Estado inicial
+gsap.set('.taller-deco', { clipPath: 'inset(0% 0% 100% 0%)' });
+
+// Clip reveal de arriba hacia abajo
+gsap.to('.taller-deco', {
+  clipPath: 'inset(0% 0% 0% 0%)',
+  duration: 1.8,
+  ease: 'power4.out',
+  delay: 0.5
+});
+
+// Parallax con el mouse
+window.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  gsap.to('.taller-deco', {
+    x: x,
+    y: y,
+    duration: 1.2,
+    ease: 'power2.out'
+  });
+});
+
+gsap.set('.iglesia-deco', { clipPath: 'inset(0% 100% 0% 0%)' });
+
+gsap.to('.iglesia-deco', {
+  clipPath: 'inset(0% 0% 0% 0%)',
+  duration: 1.8,
+  ease: 'power4.out',
+  scrollTrigger: {
+    trigger: '.iglesia-deco-wrapper',
+    start: 'top 80%',
+    toggleActions: 'play none none reverse'
+  }
+});

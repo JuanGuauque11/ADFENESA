@@ -198,6 +198,34 @@ body {
   overflow: hidden;
 }
 
+.taller-deco {
+  position: absolute;
+  height: 110%;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.iglesia-deco-wrapper {
+  position: relative;
+  height: 400px;
+}
+
+.iglesia-deco {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 400%;
+  object-fit: cover;
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+
 /* ── Estado inicial del título ── */
 .historia-title {
   font-family: "Melodrama", sans-serif;
@@ -268,6 +296,7 @@ body {
 
 /* ── Secciones de imágenes con scroll ── */
 .imagen-seccion {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -313,6 +342,7 @@ body {
 }
 
 .footer {
+  position: relative;
   background-color: #d73300;
   padding: 50px;
 }
@@ -471,6 +501,16 @@ body {
     font-size: clamp(0.8rem, 3.5vw, 0.95rem);
     line-height: 1.8;
   }
+
+  .iglesia-deco-wrapper {
+  height: 350px;
+}
+
+.iglesia-deco {
+  height: 200%;
+  opacity: 0.2;
+}
+
 
   /* ── Footer ── */
   .footer {
