@@ -692,7 +692,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   min-height: 600px;
-  background-image: url("../IMAGENES/oveja-lejos.jpg");
+  background-image: url("../assets/images/oveja-lejos.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
