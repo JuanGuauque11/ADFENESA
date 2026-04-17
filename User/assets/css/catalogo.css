@@ -25,7 +25,8 @@
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2") format("woff2");
+  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2")
+    format("woff2");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -53,6 +54,7 @@ body {
   font-family: "Melodrama", sans-serif;
   background-color: #ffffff;
   color: #5c1200;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -752,15 +754,15 @@ body {
 @media (max-width: 780px) {
   /* ── Header ── */
   .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 70px;
-  position: relative;
-  width: 90%;
-  margin: 20px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: relative;
+    width: 90%;
+    margin: 20px auto 0;
   }
 
   .header .nav-links {
@@ -775,11 +777,11 @@ body {
   }
 
   .hamburger {
-  display: flex !important;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   /* ── Drawer — panel lateral desde la derecha ── */
@@ -834,4 +836,3 @@ body {
     font-size: 18px;
   }
 }
-

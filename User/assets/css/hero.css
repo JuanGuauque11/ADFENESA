@@ -20,7 +20,8 @@
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2") format("woff2");
+  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2")
+    format("woff2");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -42,6 +43,7 @@
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
@@ -284,7 +286,7 @@ body {
   align-items: center;
   gap: 20px;
   padding-right: 40px;
-  font-family: 'Melodrama', sans-serif;
+  font-family: "Melodrama", sans-serif;
   font-size: 22px;
   font-weight: 400;
   color: #ffffff;
@@ -299,8 +301,12 @@ body {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .historia-hero {
@@ -885,15 +891,15 @@ body {
 @media (max-width: 768px) {
   /* ── Header ── */
   .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 70px;
-  position: relative;
-  width: 90%;
-  margin: 20px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: relative;
+    width: 90%;
+    margin: 20px auto 0;
   }
 
   .header .nav-links {
@@ -908,11 +914,11 @@ body {
   }
 
   .hamburger {
-  display: flex !important;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   /* ── Drawer — panel lateral desde la derecha ── */
@@ -1145,10 +1151,10 @@ body {
     padding: 8px 24px;
   }
 
-.iglesia-procesos {
-  height: 100%;
-  bottom: 50px;
-}
+  .iglesia-procesos {
+    height: 100%;
+    bottom: 50px;
+  }
 
   .cards-pro {
     display: flex;
@@ -1226,8 +1232,8 @@ body {
   }
 }
 
-@media (max-width: 1370px){
-   /* ── Historia ── */
+@media (max-width: 1370px) {
+  /* ── Historia ── */
   .title-historia {
     font-size: 70px;
     top: 20px;

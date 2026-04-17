@@ -20,7 +20,8 @@
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2") format("woff2");
+  src: url("/assets/images/tipografias/Melodrama-Semibold.woff2")
+    format("woff2");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -42,6 +43,7 @@
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
@@ -427,7 +429,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   /* ── Header ── */
   .header {
     width: 90%;
@@ -502,14 +503,13 @@ body {
   }
 
   .iglesia-deco-wrapper {
-  height: 350px;
-}
+    height: 350px;
+  }
 
-.iglesia-deco {
-  height: 200%;
-  opacity: 0.2;
-}
-
+  .iglesia-deco {
+    height: 200%;
+    opacity: 0.2;
+  }
 
   /* ── Footer ── */
   .footer {
