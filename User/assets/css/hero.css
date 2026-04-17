@@ -1017,25 +1017,27 @@ body {
   }
 
   /* ── Historia — imágenes en abanico ── */
-  .imgs-historia {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    margin: 20px auto;
-  }
+.imgs-historia {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
 
-  .hilandera,
-  .segundo,
-  .hijo,
-  .padre-hijo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 220px;
-    border-radius: 16px;
-    object-fit: cover;
-  }
+.hilandera,
+.segundo,
+.hijo,
+.padre-hijo {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(30px) !important;
+}
 
   .hilandera {
     z-index: 1;
