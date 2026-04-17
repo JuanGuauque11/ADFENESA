@@ -68,3 +68,16 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 node_modules/
+
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+backend/.env
+
+# Firebase
+.firebase/
+
+# Logs
+*.log
