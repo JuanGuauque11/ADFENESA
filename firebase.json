@@ -15,7 +15,7 @@
     },
     {
       "target": "admin",
-      "public": "Admin/files",
+      "public": "Admin",
       "ignore": [
         "firebase.json",
         "**/.*",
