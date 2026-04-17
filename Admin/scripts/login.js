@@ -12,7 +12,7 @@ import {
 // Si ya hay sesión activa → redirigir al dashboard
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    window.location.href = "./dashboard.html";
+    window.location.href = "./pages/dashboard.html";
   }
 });
 
