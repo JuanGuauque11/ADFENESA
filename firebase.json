@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "public",
-      "public": "FRONTEND",
+      "public": "User",
       "ignore": [
         "firebase.json",
         "**/.*",
