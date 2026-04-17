@@ -48,29 +48,56 @@ inputEmail.addEventListener("keydown", (e) => {
 // ── Botón login ──
 btnLogin.addEventListener("click", handleLogin);
 
+// ── Control de intentos ──
+let intentosFallidos = 0;
+const MAX_INTENTOS = 5;
+const BLOQUEO_MS = 5 * 60 * 1000;
+
+function verificarBloqueo() {
+  const bloqueoHasta = localStorage.getItem('bloqueoHasta');
+  if (bloqueoHasta && Date.now() < parseInt(bloqueoHasta)) {
+    const minutos = Math.ceil((parseInt(bloqueoHasta) - Date.now()) / 60000);
+    mostrarError(`Demasiados intentos. Esperá ${minutos} minuto(s).`);
+    btnLogin.disabled = true;
+    return true;
+  }
+  btnLogin.disabled = false;
+  return false;
+}
+
 async function handleLogin() {
+  if (verificarBloqueo()) return;
+
   const email    = inputEmail.value.trim();
   const password = inputPassword.value;
 
-  // Ocultar error previo
   loginError.classList.add("hidden");
 
-  // Validaciones básicas
   if (!email || !password) {
     mostrarError("Completa el correo y la contraseña.");
     return;
   }
 
-  // Estado de carga
   setLoading(true);
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    // onAuthStateChanged detectará el cambio y redirigirá automáticamente
+    intentosFallidos = 0;
+    localStorage.removeItem('bloqueoHasta');
   } catch (error) {
     setLoading(false);
+    intentosFallidos++;
+
+    if (intentosFallidos >= MAX_INTENTOS) {
+      localStorage.setItem('bloqueoHasta', Date.now() + BLOQUEO_MS);
+      mostrarError('Demasiados intentos fallidos. Bloqueado por 5 minutos.');
+      btnLogin.disabled = true;
+      return;
+    }
+
+    const restantes = MAX_INTENTOS - intentosFallidos;
     const msg = mensajeDeError(error.code);
-    mostrarError(msg);
+    mostrarError(`${msg} Te quedan ${restantes} intento(s).`);
   }
 }
 

@@ -560,3 +560,33 @@ document.addEventListener("keydown", (e) => {
     if (!modalEliminarOverlay.classList.contains("hidden")) cerrarModalEliminar();
   }
 });
+
+// ════════════════════════════════════════
+//  SEGURIDAD — Protección del dashboard
+// ════════════════════════════════════════
+
+// 1. Verificar sesión activa — si no hay usuario redirige al login
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = '../index.html';
+  }
+});
+
+// 2. Cierre de sesión automático por inactividad (30 minutos)
+let timerInactividad;
+
+function resetTimer() {
+  clearTimeout(timerInactividad);
+  timerInactividad = setTimeout(async () => {
+    await signOut(auth);
+    window.location.href = '../index.html';
+  }, 30 * 60 * 1000);
+}
+
+['mousemove', 'keydown', 'click', 'scroll'].forEach(evento => {
+  window.addEventListener(evento, resetTimer);
+});
+
+resetTimer();
