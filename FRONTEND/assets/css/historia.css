@@ -283,10 +283,9 @@ body {
 
 .hero-descripcion p {
   font-family: "Melodrama", sans-serif;
-  font-size: clamp(0.85rem, 1.3vw, 1rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-weight: 500;
   color: #5c1200;
-  line-height: 1.9;
 }
 
 .historia-title.linea-activa::after {
@@ -335,8 +334,8 @@ body {
 
 .img-descripcion p {
   font-family: "Melodrama", sans-serif;
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-weight: 500;
   color: #5c1200;
   line-height: 1.95;
 }
