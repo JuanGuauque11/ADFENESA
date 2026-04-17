@@ -1,33 +1,33 @@
 @font-face {
   font-family: "Melodrama";
-  src: url("/TIPOGRAFIAS/Melodrama-Light.woff2") format("woff2");
+  src: url(".assets/images/tipografias/Melodrama-Light.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/TIPOGRAFIAS/Melodrama-Regular.woff2") format("woff2");
+  src: url(".assets/images/tipografias/Melodrama-Regular.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/TIPOGRAFIAS/Melodrama-Medium.woff2") format("woff2");
+  src: url(".assets/images/tipografias/Melodrama-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/TIPOGRAFIAS/Melodrama-Semibold.woff2") format("woff2");
+  src: url(".assets/images/tipografias/Melodrama-Semibold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/TIPOGRAFIAS/Melodrama-Bold.woff2") format("woff2");
+  src: url(".assets/images/tipografias/Melodrama-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
