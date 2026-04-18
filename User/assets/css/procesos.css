@@ -40,11 +40,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;

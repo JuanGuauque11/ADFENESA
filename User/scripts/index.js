@@ -83,10 +83,10 @@ ScrollTrigger.create({
 //  Desktop: pin + scrub
 // ══════════════════════════════════════
 if (isMobile()) {
-  gsap.set('.hilandera',  { opacity: 0, scale: 0.6, rotation: -25, x: -30, y: 80 });
-  gsap.set('.segundo',    { opacity: 0, scale: 0.6, rotation:  20, x:  30, y: 80 });
-  gsap.set('.hijo',       { opacity: 0, scale: 0.6, rotation: -18, x: -20, y: 80 });
-  gsap.set('.padre-hijo', { opacity: 0, scale: 0.6, rotation:  22, x:  25, y: 80 });
+  gsap.set('.hilandera',  { opacity: 0, scale: 0.8, rotation: -12, x: -40, y: 20 });
+  gsap.set('.segundo',    { opacity: 0, scale: 0.8, rotation:   8, x:  30, y: -10 });
+  gsap.set('.hijo',       { opacity: 0, scale: 0.8, rotation:  -5, x: -20, y:  30 });
+  gsap.set('.padre-hijo', { opacity: 0, scale: 0.8, rotation:  10, x:  25, y: -20 });
 
   const tlMobile = gsap.timeline({
     scrollTrigger: {
@@ -99,13 +99,12 @@ if (isMobile()) {
   });
 
   tlMobile
-    .to('.hilandera',  { opacity: 1, scale: 1, rotation: -8, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.7)' })
-    .to('.segundo',    { opacity: 1, scale: 1, rotation:  5, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.7)' })
-    .to('.hijo',       { opacity: 1, scale: 1, rotation: -4, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.7)' })
-    .to('.padre-hijo', { opacity: 1, scale: 1, rotation:  6, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.7)' });
-}
+    .to('.hilandera',  { opacity: 1, scale: 1, rotation: -8, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.segundo',    { opacity: 1, scale: 1, rotation:  5, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.hijo',       { opacity: 1, scale: 1, rotation: -4, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' })
+    .to('.padre-hijo', { opacity: 1, scale: 1, rotation:  6, x: 0, y: 0, duration: 0.7, ease: 'back.out(1.4)' });
 
-else {
+} else {
   gsap.set(['.hilandera', '.segundo', '.hijo', '.padre-hijo'], { opacity: 0, y: 60 });
 
   const tl = gsap.timeline({

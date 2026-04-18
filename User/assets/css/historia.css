@@ -40,15 +40,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
-  overflow-x: hidden;
 }
 
 .header {
@@ -242,6 +236,7 @@ body {
   letter-spacing: 0.05em;
   position: relative;
   will-change: transform, font-size, opacity;
+  transform-origin: center center;
 }
 
 /* ── Línea azul bajo el título (aparece al final) ── */
