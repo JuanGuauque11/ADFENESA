@@ -39,8 +39,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-    overflow-x: hidden;
+html {
+  overflow-x: hidden;
 }
 
 body {
@@ -890,18 +890,17 @@ body {
    ══════════════════════════════════════ */
 
 @media (max-width: 768px) {
-
   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  min-height: 100vh;
-  font-family: "Melodrama", sans-serif;
-  overflow-x: hidden;
-}
+  body {
+    min-height: 100vh;
+    font-family: "Melodrama", sans-serif;
+    overflow-x: hidden;
+  }
 
   /* ── Header ── */
   .header {
@@ -1026,27 +1025,27 @@ body {
   }
 
   /* ── Historia — imágenes en abanico ── */
-.imgs-historia {
-  width: 100%;
-  height: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-}
+  .imgs-historia {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
 
-.hilandera,
-.segundo,
-.hijo,
-.padre-hijo {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 16px;
-  object-fit: cover;
-  opacity: 0;
-  transform: translateY(30px) !important;
-}
+  .hilandera,
+  .segundo,
+  .hijo,
+  .padre-hijo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(30px) !important;
+  }
 
   .hilandera {
     z-index: 1;

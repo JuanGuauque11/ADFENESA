@@ -40,8 +40,8 @@
   box-sizing: border-box;
 }
 
-html{
-    overflow-x: hidden;
+html {
+  overflow-x: hidden;
 }
 
 body {
@@ -433,6 +433,18 @@ body {
 }
 
 @media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: "Melodrama", sans-serif;
+    overflow-x: hidden;
+  }
+
   /* ── Header ── */
   .header {
     width: 90%;
