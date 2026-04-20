@@ -38,11 +38,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    outline: 1px solid red;
 }
 html{
     overflow-x: hidden;
 }
+
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
