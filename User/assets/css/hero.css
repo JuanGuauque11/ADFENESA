@@ -899,7 +899,7 @@ body {
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
   /* ── Header ── */
