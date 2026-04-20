@@ -43,7 +43,7 @@
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -889,6 +889,19 @@ body {
    ══════════════════════════════════════ */
 
 @media (max-width: 768px) {
+
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Melodrama", sans-serif;
+  overflow: hidden;
+}
+
   /* ── Header ── */
   .header {
     display: flex;
