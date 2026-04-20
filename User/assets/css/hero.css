@@ -38,12 +38,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+    outline: 1px solid red;
 }
-
+html{
+    overflow-x: hidden;
+}
 body {
   min-height: 100vh;
   font-family: "Melodrama", sans-serif;
-  overflow-x: hidden;
 }
 
 .header {
@@ -884,8 +886,7 @@ body {
 
 /* ── Responsive ── */
 /* ══════════════════════════════════════
-   RESPONSIVE FIXES — reemplaza TODO el bloque
-   @media (max-width: 768px) en hero.css
+   @media (max-width: 768px)
    ══════════════════════════════════════ */
 
 @media (max-width: 768px) {
@@ -959,8 +960,8 @@ body {
   }
 
   .hero {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   .presentacion {
