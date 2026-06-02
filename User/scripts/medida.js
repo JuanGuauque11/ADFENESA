@@ -45,7 +45,7 @@ btnEnviar.addEventListener('click', async () => {
   btnEnviar.textContent = 'Enviando...';
 
   try {
-    const response = await fetch('https://adfenesa-backend.onrender.com/api/contacto', {
+    const response = await fetch('https://adfenesa.onrender.com/api/contacto', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre, email, telefono })
